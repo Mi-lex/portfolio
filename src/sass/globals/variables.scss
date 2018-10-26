@@ -1,13 +1,17 @@
 /* Global fonts rules */
 $page-font: 'Source Sans Pro', sans-serif;
 $page-font-size: 17px;
-$page-font-color: black;
+$page-font-color: rgb(233, 223, 223);
 $page-line-height: 30px;
 
 /* Sizes */
 $mobile-width: 320px;
 $tablet-width: 768px;
 $desktop-width: 1150px;
+
+$mobile-header-height: 30px; // Remeasure
+$tablet-header-height: 30px; // Remeasure
+$desktop-header-height: 30px; // Remeasure
 
 $mobile-width-only: $tablet-width - 1px;
 

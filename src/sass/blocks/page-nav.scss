@@ -1,0 +1,50 @@
+.page-nav {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+
+    &__list {
+        list-style: none;
+    }
+
+    &__item {
+        width: 100%;
+        text-align: right;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+.page-nav__menu-toggler {
+    margin-left: auto;
+    width: 30px;
+    height: $mobile-header-height;
+}
+
+@media (min-width: $tablet-width) {
+    .page-nav {
+        flex-direction: row;
+
+        &__menu-toggler {
+            display: none;
+        }
+
+        &__list {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            padding: 0;
+            margin: 0 auto;
+        }
+
+        &__item {
+            width: 100px;
+            text-align: center;
+        }
+    }
+}
+
+

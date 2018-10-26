@@ -1,0 +1,65 @@
+.about {
+    width: 100%;
+    min-height: 100vh;
+
+    &__wrapper {
+        @include wrapper;
+    }
+
+    &__upper-subcontent {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__img-frame {
+        align-self: center;
+    }
+
+    &__bio {
+        text-align: justify;
+    }
+
+    &__skills {
+        display: flex;
+        flex-flow: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__skills-item {
+        width: calc(100% / 4);
+        text-align: center;
+    }
+
+    &__skills-item--secondary {
+        width: calc(100% / 5);
+    }
+}
+
+@media (min-width: $tablet-width) {
+    .about {
+
+        &__upper-subcontent {
+            flex-direction: row;
+        }
+
+        &__img-frame {
+            width: 30%;
+            margin: 0;
+            padding: 0;
+        }
+
+        &__bio {
+            width: 70%;
+        }
+
+        &__empty-section {
+            width: 100%;
+            min-height: 20vh;
+            background-color: rgb(189, 128, 128);
+        }
+    }
+}
