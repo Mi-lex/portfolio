@@ -9,12 +9,15 @@
 </head>
 <body>
     <header class="page-header">
-        <div class="page-header__wrapper">
-            <nav class="page-nav">
-                <button class="page-nav__menu-toggler">
-                    <span class="visually-hidden">Open</span>
-                </button>
-                <ul class="page-nav__list page-nav__list--closed">
+        <nav class="page-nav page-nav--closed">
+            <button class="page-nav__menu-toggler">
+                <span class="visually-hidden">Open</span>
+            </button>
+            <div class="page-nav__list-container">
+                <ul class="page-nav__list">
+                    <li class="page-nav__item page-nav__item--active page-nav__item--left">
+                        <a href="" class="page-nav__link">Home</a>
+                    </li>
                     <li class="page-nav__item">
                         <a href="" class="page-nav__link">About me</a>
                     </li>
@@ -25,8 +28,8 @@
                         <a href="" class="page-nav__link">Stay in touch</a>
                     </li>
                 </ul>
-            </nav>
-        </div>
+            </div>
+        </nav>
     </header>
     <main>
         <section class="promo">
@@ -185,5 +188,6 @@
             </ul>
         </section>
     </footer>
+    <script src="./build/app.js"></script>
 </body>
 </html>

@@ -1,12 +1,8 @@
-class FancyClass {
-    constructor(fancyName) {
-        this.__name = fancyName;
-    }
+const menuToggler = document.querySelector('.page-nav__menu-toggler');
+const pageNav = document.querySelector('.page-nav');
 
-    get fancyName() {
-        return this.__name;
-    }
-}
+const toggleMenu = () => {
+    pageNav.classList.toggle('page-nav--closed');
+};
 
-const fancyInstance = new FancyClass('somethingFancy');
-fancyInstance.fancyName();
+menuToggler.addEventListener('click', toggleMenu);

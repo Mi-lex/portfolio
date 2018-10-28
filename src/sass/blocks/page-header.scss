@@ -1,18 +1,12 @@
 .page-header {
     position: fixed;
-    width: 100%;
-    height: $mobile-header-height;
-
-    &__wrapper {
-        width: 80%;
-        margin: 0 auto;
-    }
+    width: 100vw;
+    min-height: $mobile-header-height;
+    z-index: 2;
 }
 
 @media (min-width: $tablet-width) {
     .page-header {
-        &__wrapper {
-            max-width: $desktop-wrapper-width;
-        }
+
     }
 }
