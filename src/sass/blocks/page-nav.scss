@@ -1,27 +1,3 @@
-@keyframes slide_down {
-    0% {
-        transform: translateY(-100%); 
-        opacity: 0
-    }
-
-    100% {
-        transform: translateY(0);
-        opacity: 1
-    }
-}
-
-@keyframes slide_up {
-    0% {
-        transform: translateY(100%); 
-        opacity: 0
-    }
-
-    100% {
-        transform: translateY(0);
-        opacity: 1
-    }
-}
-
 .page-nav {
     display: flex;
     width: 100vw;
@@ -34,8 +10,10 @@
         height: 100vh;
 
         transform: translateY(0);
+        opacity: 1;
+        
 
-        background: rgba(22, 16, 18, 0.6);
+        background: rgba(16, 18, 22, 0.6);
         @include ease-out(0.35s);
     }
 
@@ -46,8 +24,9 @@
         padding-right: 10vw;
 
         transform: translateY(0);
+        opacity: 1;
 
-        background: rgb(22, 16, 18);
+        background: $main-tone;
 
         @include ease-out(0.35s);
     }
@@ -72,7 +51,6 @@
     }
 
     &__item--active {
-        opacity: 1;
         &::after {
             position: absolute;
             bottom: 0px;
@@ -85,6 +63,7 @@
     }
     &__item--active &__link {
         pointer-events: none;
+        opacity: 1;
     }
     &__link {
         display: inline-block;
@@ -140,10 +119,12 @@
     .page-nav--closed {
       .page-nav__list-container {
         transform: translateY(100%);
+        opacity: 0.2;
       }
 
       &::before {
         transform: translateY(-100%);
+        opacity: 0.2;
       }
 
       .page-nav__menu-toggler::after {
@@ -162,6 +143,7 @@
 @media (min-width: $tablet-width) {
     .page-nav {
         width: 80vw;
+        max-width: $desktop-width;
         margin: 0 auto;
 
         font-size: 1.3rem;

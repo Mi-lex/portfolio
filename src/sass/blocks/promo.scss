@@ -1,12 +1,149 @@
 .promo {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     min-height: 100vh;
     width: 100%;
 
-    &__title {
-        margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url('./../img/bridge-mobile-360.jpg');
+
+    &::after {
+        @include overlay(linear-gradient(rgba(16, 18, 22, 0.3), rgba(16, 18, 22, 0.75)));
+    }
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url('./../img/bridge-mobile-360(2x).jpg');
+
+    }
+    
+    @media (orientation: landscape) {
+        background-image: url('./../img/bridge-desktop-1440.jpg');
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
+        z-index: 1;
+
+        &::before, &::after {
+            content: "";
+            width: 2px;
+            height: 20px;
+            border-radius: 3px;
+        }
+
+        &::before {
+            background-image: linear-gradient(to top, #77a1d3, #79cbca, #e684ae);
+
+        }
+
+        &::after {
+            background-image: linear-gradient(to bottom, #77a1d3, #79cbca, #e684ae);
+        }
+    }
+
+    &__icon {
+        order: -1;
+        width: 70px;
+        height: 70px;
+        padding-top: 15px;
+        border: 1px solid #e684ae;
+        border-radius: 50%;
+    }
+
+
+    &__title {
+        position: relative;
+
+        display: inline-block;
+        max-width: 80vw;
+        min-width: 60vw;
+        padding: 10vh 10vw;
+        margin: 0 auto;
+
+        font-size: 4rem;
+        letter-spacing: 0.5rem;
+        text-align: center;
+        text-transform: uppercase;
+
+        opacity: 0.7;
+
+        &::before, &::after {
+            position: absolute;
+            left: 0;
+
+            display: block;
+            width: 100%;
+            height: 2px;
+
+            content: '';
+        }
+
+        &::before {
+            top: 0;
+            background-image: linear-gradient(to right, #77a1d3, #79cbca, #e684ae);
+        }
+
+        &::after {
+            bottom :0;
+            background-image: linear-gradient(to left, #77a1d3, #79cbca, #e684ae);
+
+        }
+    }
+}
+
+@media (min-width: $tablet-width) {
+    .promo {
+        background-image: url('./../img/bridge-tablet-768.jpg');
+
+        @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+            background-image: url('./../img/bridge-tablet-768(2x).jpg');
+        }
+
+        &__icon {
+            width: 80px;
+            height: 80px;
+            padding-top: 18px;
+        }
+
+        &__title {
+            min-width: 50vw;
+            font-size: 4.5rem;
+        }
+    }
+}
+
+@media (min-width: $desktop-width) {
+    .promo {
+        background-attachment: fixed;
+        background-image: url('./../img/bridge-desktop-1440.jpg');
+
+        @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+            background-image: url('./../img/bridge-desktop-2560.jpg');
+        }
+
+        &__icon {
+            width: 85px;
+            height: 85px;
+            padding-top: 18px;
+        }
+
+        &__title {
+            min-width: auto;
+            width: 668px;
+            font-size: 5rem;
+        }
+    }
+}
+
+@media (min-width: $desktop-large-width) {
+    .promo {
+        background-image: url('./../img/bridge-desktop-1920.jpg');
     }
 }
