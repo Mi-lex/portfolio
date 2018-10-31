@@ -5,6 +5,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const PurifyCSSPlugin = require('purifycss-webpack');
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
 const config = {
     entry: {
@@ -52,7 +53,7 @@ const config = {
                 }
             },
             {
-                test: /\.(png|jpe?g|gif|svg)$/,
+                test: /\.(png|jpe?g|gif)$/,
                 loaders: [
                     {
                         loader: 'file-loader',
@@ -63,6 +64,19 @@ const config = {
 
                     'img-loader'
                 ],
+            },
+            {
+                test: /\.svg$/,
+                use: [
+                    {
+                        loader: 'svg-sprite-loader',
+                        options: {
+                            extract: true,
+                            publicPath: '/img/'
+                        }
+                    },
+                    'svgo-loader'
+                ]
             }
         ]
     },
@@ -71,7 +85,8 @@ const config = {
         new ExtractTextPlugin("[name].css"),
         new PurifyCSSPlugin({
             paths: glob.sync(path.join(__dirname, 'index.html')),
-        })
+        }),
+        new SpriteLoaderPlugin()
     ],
 
     optimization: {

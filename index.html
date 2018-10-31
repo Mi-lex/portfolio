@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <title></title>
     <link rel="stylesheet" href="build/app.css">
 </head>
+
 <body>
     <header class="page-header">
         <nav class="page-nav page-nav--closed">
@@ -36,7 +38,7 @@
             <div class="promo__container">
                 <div class="promo__icon">
                     <svg width="80%" height="80%">
-                        <use xlink:href="build/img/web.svg#icon-web"></use>
+                        <use xlink:href="build/img/sprite.svg#web"></use>
                     </svg>
                 </div>
                 <h1 class="promo__title">
@@ -45,73 +47,119 @@
             </div>
         </section>
         <article class="about">
-            <div class="about__empty-section"></div>
             <div class="about__wrapper">
-                <header class="about__header">
-                    <h2 class="about__title">
-                        About me
-                    </h2>
-                </header>
                 <section class="about__content">
+                    <header class="about__header">
+                        <h2 class="about__title">
+                            About me
+                        </h2>
+                    </header>
                     <div class="about__upper-subcontent">
                         <figure class="about__img-frame">
-                            <img src="#" alt="picture of Alexey" class="about__img">
+                            <img src="build/img/me-desktop(2x).jpg" alt="picture of Alexey" class="about__img" width="95%"
+                                height="95%">
                         </figure>
                         <section class="about__bio">
                             <p class="about__bio-text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem molestias aperiam architecto rerum accusamus error
-                                doloremque corrupti odio eum harum et corporis, aut molestiae debitis maiores ipsum fugiat ipsam fuga culpa id, eius
-                                laboriosam obcaecati. Nihil distinctio aliquam voluptatem aperiam quibusdam impedit repellendus reiciendis pariatur vel
-                                suscipit. 
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem molestias aperiam
+                                architecto rerum accusamus error
+                                doloremque corrupti odio eum harum et corporis, aut molestiae debitis maiores ipsum
+                                fugiat ipsam fuga culpa id, eius
+                                laboriosam obcaecati.
                             </p>
                         </section>
                     </div>
                     <div class="about__lower-subcontent">
                         <h3 class="about__skills-heading">
-                            Fancy words I'm familiar with:
+                            Familiar words:
                         </h3>
                         <ul class="about__skills">
                             <li class="about__skills-item">
+                                <div class="about__skills-icon">
+                                    <svg style="width: 100%; height: 100%;">
+                                        <use xlink:href="build/img/sprite.svg#html-5"></use>
+                                    </svg>
+                                </div>
                                 <a href="" class="about__skills-link">
                                     HTML5
                                 </a>
                             </li>
                             <li class="about__skills-item">
+                                <div class="about__skills-icon">
+                                    <svg style="width: 100%; height: 100%;">
+                                        <use xlink:href="build/img/sprite.svg#css3"></use>
+                                    </svg>
+                                </div>
                                 <a href="" class="about__skills-link">
                                     CSS3
                                 </a>
                             </li>
                             <li class="about__skills-item">
+                                <div class="about__skills-icon">
+                                    <svg style="width: 100%; height: 100%;">
+                                        <use xlink:href="build/img/sprite.svg#javascript"></use>
+                                    </svg>
+                                </div>
                                 <a href="" class="about__skills-link">
                                     JS
                                 </a>
                             </li>
                             <li class="about__skills-item">
+                                <div class="about__skills-icon">
+                                    <svg style="width: 100%; height: 100%;">
+                                        <use xlink:href="build/img/sprite.svg#php"></use>
+                                    </svg>
+                                </div>
                                 <a href="" class="about__skills-link">
                                     PHP-7
                                 </a>
                             </li>
                             <li class="about__skills-item about__skills-item--secondary">
+                                <div class="about__skills-icon">
+                                    <svg style="width: 100%; height: 100%;">
+                                        <use xlink:href="build/img/sprite.svg#sass"></use>
+                                    </svg>
+                                </div>
                                 <a href="" class="about__skills-link">
                                     Sass
                                 </a>
                             </li>
                             <li class="about__skills-item about__skills-item--secondary">
+                                <div class="about__skills-icon">
+                                    <svg style="width: 100%; height: 100%;">
+                                        <use xlink:href="build/img/sprite.svg#bem"></use>
+                                    </svg>
+                                </div>
                                 <a href="" class="about__skills-link">
                                     BEM
                                 </a>
                             </li>
                             <li class="about__skills-item about__skills-item--secondary">
+                                <div class="about__skills-icon">
+                                    <svg style="width: 100%; height: 100%;">
+                                        <use xlink:href="build/img/sprite.svg#es6"></use>
+                                    </svg>
+                                </div>
                                 <a href="" class="about__skills-link">
                                     ES6
                                 </a>
                             </li>
                             <li class="about__skills-item about__skills-item--secondary">
+                                <div class="about__skills-icon">
+                                    <svg style="width: 100%; height: 100%;">
+                                        <use xlink:href="build/img/sprite.svg#typescript"></use>
+                                    </svg>
+                                </div>
                                 <a href="" class="about__skills-link">
                                     TS
                                 </a>
                             </li>
                             <li class="about__skills-item about__skills-item--secondary">
+                                <div class="about__skills-icon">
+                                    <svg style="width: 100%; height: 100%;">
+                                        <use xlink:href="build/img/sprite.svg#laravel"></use>
+                                    </svg>
+                                </div>
                                 <a href="" class="about__skills-link">
                                     Laravel
                                 </a>
@@ -197,4 +245,5 @@
     </footer>
     <script src="./build/app.js"></script>
 </body>
+
 </html>

@@ -1,6 +1,13 @@
 .page-header {
     position: fixed;
-    width: 100vw;
+
     min-height: $mobile-header-height;
-    z-index: 2;
+    z-index: 3;
+}
+
+@media (min-width: $tablet-width) {
+    .page-header {
+        width: 100vw;
+        background: rgba(16, 18, 22, 0.3);
+    }
 }

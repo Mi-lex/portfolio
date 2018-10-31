@@ -7,6 +7,7 @@
     width: 100%;
 
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-position: center;
     background-size: cover;
     background-image: url('./../img/bridge-mobile-360.jpg');
@@ -72,7 +73,7 @@
         text-align: center;
         text-transform: uppercase;
 
-        opacity: 0.7;
+        opacity: 0.9;
 
         &::before, &::after {
             position: absolute;
@@ -123,6 +124,7 @@
     .promo {
         background-attachment: fixed;
         background-image: url('./../img/bridge-desktop-1440.jpg');
+        box-shadow: 0 5px 1px 2px rgba(0, 0, 0, 0.55);
 
         @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
             background-image: url('./../img/bridge-desktop-2560.jpg');

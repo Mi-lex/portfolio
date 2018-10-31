@@ -2,54 +2,206 @@
     width: 100%;
     min-height: 100vh;
 
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-image: url('./../img/mountain-mobile.jpg');
+
     &__wrapper {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        padding: 0 0.5rem;
+
+        background-image: linear-gradient(to bottom, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5))
+    }
+
+    &__title {
+        position: relative;
+        margin: 0;
+        margin-bottom: 1rem;
+        padding-left: 0.5rem;
+
+        font-size: 3rem;
+        line-height: 5rem;
+        text-transform: uppercase;
+    }
+
+    &__content {
         @include wrapper;
     }
 
     &__upper-subcontent {
+        width: 100%;
         display: flex;
         flex-direction: column;
     }
 
     &__img-frame {
+        position: relative;
+        width: 50vw;
+        height: 50vw;
+
+        @media (orientation: landscape) {
+            width: 40vh;
+            height: 40vh;
+        }
+
+        margin: 0;
+        padding: 0;
         align-self: center;
+        background: linear-gradient(to left, #c6ffdd, #fbd786, #f7797d);
+        border-radius: 50%;
+    }
+
+    &__img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+
+        border-radius: 50%;
     }
 
     &__bio {
         text-align: justify;
     }
 
+    &__skills-heading {
+        padding-left: 0.1rem;
+        margin-top: 1rem;
+        font-size: 1.8rem;
+        line-height: 1.9rem;
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;
+    }
+
     &__skills {
         display: flex;
         flex-flow: wrap;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
         margin: 0;
         padding: 0;
         list-style: none;
     }
 
     &__skills-item {
-        width: calc(100% / 4);
+        width: calc(100vw / 4);
+        height: calc(100vw / 4);
+
+        @media (orientation: landscape) {
+            width: calc(100vw / 7);
+            height: calc(100vw / 7); 
+        }
+        margin-bottom: 1rem;
         text-align: center;
     }
 
-    &__skills-item--secondary {
-        width: calc(100% / 5);
+    // &__skills-item--secondary {
+    //     width: calc(100% / 5);
+    // }
+
+    &__skills-link {
+        display: block;
+        height: 20%;
+        min-height: 2rem;
+        font-size: 1.2rem;
+        line-height: 2rem;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    &__skills-icon {
+        display: block;
+        width: 100%;
+        height: 70%;
+        margin: 0 auto;
+        padding: 0;
+        // background-image: linear-gradient(to right, rgba(119, 160, 211, 0.8), rgba(121, 203, 202, 0.3), rgba(230, 132, 174, 0.4));
+        border-radius: 20%;
+        // border: 2px solid rgb(230, 132, 174);
     }
 }
 
 @media (min-width: $tablet-width) {
     .about {
+        min-height: auto;
+        background-image: url('./../img/mountain-desktop.jpg');
+
+        &::before {
+            content: '';
+            display: block;
+            width: 100%;
+            min-height: 20vh;
+            background-color: transparent;
+        }
+
+        &__wrapper {
+            padding: 0;
+            min-height: auto;
+        }
+
+        &__title {
+            font-size: 3.2rem;
+            line-height: 5.2rem;
+        }
 
         &__upper-subcontent {
             flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
         }
 
         &__img-frame {
-            width: 30%;
+            width: 40%;
+            height: auto;
             margin: 0;
             padding: 0;
+        }
+
+        &__img-frame::after {
+            display: block;
+            content: "";
+            padding-top: 100%;
+        }
+
+        &__bio {
+            width: 55%;
+            font-size: 1.2rem;
+        }
+
+        &__skills-item {
+            width: calc(100vw / 7);
+            height: calc(100vw / 7);
+        }
+
+        &__skills-icon {
+            width: 80%;
+        }
+    }
+}
+
+@media (min-width: $desktop-width) {
+    .about {
+        background-image: url('./../img/mountain-desktop.jpg');
+
+        &::before {
+            content: '';
+            display: block;
+            width: 100%;
+            min-height: 20vh;
+            background-color: transparent;
+        }
+
+        &__upper-subcontent {
+        }
+
+        &__img-frame {
+            width: 25%;
         }
 
         &__bio {
@@ -57,9 +209,13 @@
         }
 
         &__empty-section {
-            width: 100%;
-            min-height: 20vh;
-            background-color: rgb(189, 128, 128);
+            
         }
+
+        &__skills-item {
+            width: 180px;
+            height: 160px;
+        }
+
     }
 }
