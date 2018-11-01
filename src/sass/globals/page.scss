@@ -6,6 +6,10 @@ html, body {
   box-sizing: border-box;
 }
 
+html {
+  font-size: $page-font-size;
+}
+
 body {
   position: relative;
 
@@ -19,7 +23,7 @@ body {
   line-height: $page-line-height;
   color: $page-font-color;
 
-  background-color: rgb(29, 28, 28);
+  background-color: rgb(19, 21, 25);
 }
 
 img {

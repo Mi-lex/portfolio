@@ -26,7 +26,47 @@
   z-index: 0;
 }
 
-// Transitions
+@mixin page-section-background
+(
+  $mobile-bg-img, 
+  $mobile-bg-img-retina, 
+  $tablet-bg-img, 
+  $tablet-bg-img-retina, 
+  $desktop-bg-img-small, 
+  $desktop-bg-img-small-retina, 
+  $desktop-bg-img-large
+) 
+{
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url($mobile-bg-img);
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url($mobile-bg-img-retina);
+  }
+
+  @media (min-width: $tablet-width) {
+    background-image: url($tablet-bg-img);
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url($tablet-bg-img-retina);
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    background-attachment: fixed;
+    background-image: url($desktop-bg-img-small);
+    
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url($desktop-bg-img-small-retina);
+    }
+  }
+
+  @media (min-width: $desktop-large-width) {
+    background-image: url($desktop-bg-img-large);
+  }
+}
 
 @mixin ease-out($duration) {
   transition: all $duration ease-out;

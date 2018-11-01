@@ -3,28 +3,24 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 100vh;
     width: 100%;
+    min-height: 100vh;
 
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    background-image: url('./../img/bridge-mobile-360.jpg');
+    // Set backgrounds using mixin
+    @include page-section-background(
+        './../img/bridge-mobile-360.jpg',
+        './../img/bridge-mobile-360(2x).jpg',
+        './../img/bridge-tablet-768.jpg',
+        './../img/bridge-tablet-768(2x).jpg',
+        './../img/bridge-desktop-1440.jpg',
+        './../img/bridge-desktop-1440(2x).jpg',
+        './../img/bridge-desktop-1920.jpg',
+    );
 
     &::after {
-        @include overlay(linear-gradient(rgba(16, 18, 22, 0.3), rgba(16, 18, 22, 0.75)));
-    }
-
-    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-        background-image: url('./../img/bridge-mobile-360(2x).jpg');
-
+        @include overlay(linear-gradient(transparent, rgba(16, 18, 22, 0.6)));
     }
     
-    @media (orientation: landscape) {
-        background-image: url('./../img/bridge-desktop-1440.jpg');
-    }
-
     &__container {
         display: flex;
         flex-direction: column;
@@ -101,12 +97,6 @@
 
 @media (min-width: $tablet-width) {
     .promo {
-        background-image: url('./../img/bridge-tablet-768.jpg');
-
-        @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-            background-image: url('./../img/bridge-tablet-768(2x).jpg');
-        }
-
         &__icon {
             width: 80px;
             height: 80px;
@@ -122,13 +112,7 @@
 
 @media (min-width: $desktop-width) {
     .promo {
-        background-attachment: fixed;
-        background-image: url('./../img/bridge-desktop-1440.jpg');
         box-shadow: 0 5px 1px 2px rgba(0, 0, 0, 0.55);
-
-        @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-            background-image: url('./../img/bridge-desktop-2560.jpg');
-        }
 
         &__icon {
             width: 85px;
@@ -141,11 +125,5 @@
             width: 668px;
             font-size: 5rem;
         }
-    }
-}
-
-@media (min-width: $desktop-large-width) {
-    .promo {
-        background-image: url('./../img/bridge-desktop-1920.jpg');
     }
 }
