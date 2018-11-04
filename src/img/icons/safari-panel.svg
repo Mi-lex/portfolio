@@ -1,0 +1,15 @@
+<svg width="491" height="38" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <g class="layer">
+  <title>Layer 1</title>
+  <g id="svg_2">
+   <g id="svg_1">
+    <rect fill="#cccccc" height="39.05306" id="svg_28" rx="8" ry="8" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="null" width="490.81201" x="0.16665" y="0.16667"/>
+    <rect fill="#cccccc" height="7.00952" id="svg_30" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="null" width="490.81201" x="0.16665" y="32.04331"/>
+   </g>
+   <path d="m476.26632,24.19932c0,2.20299 -2.80214,4.00544 -6.22697,4.00544l-361.16418,0c-3.43106,0 -6.22697,-1.80245 -6.22697,-4.00544l0,-8.01089c0,-2.20299 2.79591,-4.00544 6.22697,-4.00544l361.16418,0c3.42483,0 6.22697,1.80245 6.22697,4.00544l0,8.01089z" fill="#F5F5F5" id="svg_7"/>
+   <circle cx="29.02639" cy="20.19388" fill="#CC584C" id="svg_3" r="7.9425"/>
+   <circle cx="53.06616" cy="20.19388" fill="#FFD464" id="svg_4" r="7.9425"/>
+   <circle cx="77.10594" cy="20.19388" fill="#198058" id="svg_5" r="7.94251"/>
+  </g>
+ </g>
+</svg>

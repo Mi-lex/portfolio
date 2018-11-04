@@ -1,0 +1,249 @@
+@keyframes openUp {
+    0% {
+        max-height: 0;
+    }
+
+    100% {
+        max-height: 1000px;
+    }
+}
+
+.project {
+    margin-bottom: 1rem;
+    overflow: hidden;
+    background: #F5F5F5;
+    border-radius: 2%;
+
+    &__img-frame {
+        margin: 0;
+        height: 62vw;
+    }
+
+    &__info {
+        padding: 0.5rem;
+        background: rgba(16, 18, 22, 0.8);
+    }
+
+    &__link {
+        padding-left: 0.2rem;
+        padding-right: 2rem;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        text-decoration: underline;
+        color: rgb(39, 159, 205);
+    }
+
+    &__description {
+        margin: 0;
+        margin-bottom: 1rem;
+        text-align: justify;
+        animation: openUp 3s ease-out;
+    }
+
+    &__footer {
+        margin-top: auto;
+        text-align: center;
+    }
+
+    &__tags {
+        display: inline-block;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__tag {
+        display: inline-block;
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}
+
+@media (max-width: $tablet-width-only) {
+    .project {
+        &__panel {
+            display: none;
+        }
+
+        &__header {
+            position: relative;
+        }
+
+        &__content-toggler {
+            position: absolute;
+            top: 0;
+            right: 0.5rem;
+
+            height: 1.5rem;
+            width: 1.5rem;
+            padding: 0;
+            border: none;
+            border-left: 2px solid white;
+            border-top: 2px solid white;
+            transform: translateY(-20%) rotate(-135deg);
+            background: transparent;
+            @include ease-out(0.3s);
+        }
+
+        &__content-toggler:focus {
+            outline: none;
+            border-color: #b993d6;
+        }
+    }
+
+    .project__container--closed {
+        .project__link {
+            margin-bottom: 0;
+        }
+
+        .project__content-toggler {
+            transform: translateY(40%) rotate(45deg);
+        }
+
+        .project__content, .project__footer {
+            display: none;
+        }
+    }
+}
+
+@media (min-width: $tablet-width) {
+    .project {
+        width: 44vw;
+
+        &__img-frame {
+            margin: 0;
+            width: 100%;
+            height: 31vw;
+        }
+        
+        &__info {
+            padding: 1rem;
+        }
+
+        &__link {
+            font-size: 1.7rem;
+        }
+
+        &__description {
+            font-size: 1.1rem;
+        }
+
+        &__tag {
+            width: 2rem;
+            height: 2rem;
+        }
+    }
+}
+
+@media (min-width: $desktop-width) {
+    .project {
+        width: 39vw;
+        height: 27.5vw;
+
+        &__panel {
+            display: block;
+            margin-top: -2px;
+            width: 100%;
+            height: 12%;
+        }
+
+        &__container {
+            position: relative;
+            height: 89%;
+        }
+
+        &__info {
+            position: absolute;
+            top: -10px;
+            left: 0;
+    
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            padding: 1.5rem 1rem;
+
+            opacity: 0;
+            z-index: -1;
+            @include ease-out(0.4s);
+        }
+
+        &__content-toggler {
+            display: none;
+        }
+    }
+
+    .project:hover {
+        .project__info {
+            top: 0;
+            opacity: 1;
+            z-index: 2;
+        }
+    }
+
+    .project__link {
+        position: relative;
+        display: inline-block;
+        color: inherit;
+        text-decoration: none;
+
+        @include ease-out(0.2s);
+    }
+
+    .project__arrow {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+
+        display: block;
+        width: 1.2rem;
+        height: 1.2rem;
+        transform: rotate(-45deg);
+        opacity: 0;
+        @include ease-out(0.4s);
+
+
+        &::before, &::after {
+            position: absolute;
+            content: "";
+
+            display: block;
+        }
+
+        &::after {
+            bottom: 0;
+            right: 0;
+            width: 0.8rem;
+            height: 0.8rem;
+            border-bottom: 2px solid white;
+            border-right: 2px solid white;
+        }
+
+        &::before {
+            top: 0px;
+            left: 11px;
+            width: 2px;
+            height: 1.3rem;
+            background: white;
+            transform: rotate(-45deg);
+        }
+    }
+
+    .project__link:hover {
+        transform: translateX(10%);
+
+        .project__arrow {
+            opacity: 1;
+            right: 0;
+        }
+    }
+}
+
+// 1312px - page width when page wrapper (80%) gets its max width (1050px)
+// thath's why it's unacceptable to rely on vw property and better set certain width/height
+
+@media (min-width: 1312px) {
+    .project {
+        width: 500px;
+        height: 353px;
+    }
+}

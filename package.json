@@ -1,15 +1,12 @@
 {
-  "name": "Yo",
+  "name": "Portfolio",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --mode development",
     "start": "npm run dev -- --watch",
-    "prod": "webpack --mode production",
-    "lint": "sass-lint -c ./.sass-lint.yml './src/sass/**/*.scss' -v -q",
-    "sass": "sass-lint --config ./sass-lint.yml '**/*.scss' --verbose --no-exit"
+    "prod": "webpack --mode production"
   },
   "keywords": [],
   "author": "",

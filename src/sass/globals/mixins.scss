@@ -7,6 +7,10 @@
 @mixin wrapper {
   width: 80vw;
   margin: 0 auto;
+  
+  @media (max-width: $tablet-width-only) {
+    width: 90vw;
+  }
 
   @media (min-width: $desktop-width) {
     max-width: $desktop-wrapper-width;
