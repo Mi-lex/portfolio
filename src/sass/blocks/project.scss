@@ -13,6 +13,8 @@
     overflow: hidden;
     background: #F5F5F5;
     border-radius: 2%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 
+                0 6px 6px rgba(0,0,0,0.23);
 
     &__img-frame {
         margin: 0;
@@ -229,7 +231,7 @@
     }
 
     .project__link:hover {
-        transform: translateX(10%);
+        padding-left: 1.5rem;
 
         .project__arrow {
             opacity: 1;

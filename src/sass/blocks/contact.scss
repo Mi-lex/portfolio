@@ -1,0 +1,191 @@
+.contact {
+    width: 100%;
+    min-height: 100vh;
+    // background: linear-gradient(to right, #ff7e5f, #feb47b);
+    // background: linear-gradient(to right, #8190b8, #50588b);
+    // background: linear-gradient(to right, #77a1d3, #79cbca, #e684ae);
+    // background: linear-gradient(to right, #c31432, #240b36); // desktop
+    // background: linear-gradient(to right, #c31432, #3a1257); // mobile-tablet
+    // background: linear-gradient(to right, #ad5389, #3c1053);
+    // background: linear-gradient(to right, #4568dc, #b06ab3);
+    // background: linear-gradient(to right, #494d99, #8f94fb);
+    // background: linear-gradient(to left, #b993d6, #8ca6db);
+    // background: #ad559a;
+    $bg-color: #7452cc;
+    $primary: white;
+    $secondary: black;
+    $font: white;
+    $font-light: rgba(240, 240, 240, 0.75);
+
+    $first-gradient-color: #780206;
+    $second-gradient-color: #061161;
+    $third-gradient-color: #050c44;
+
+    background: $bg-color;
+    color: $font;
+
+
+
+    &__form {
+        @include wrapper;
+    }
+
+    &__form-container {
+        width: 100%;
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__heading {
+        margin-bottom: 1rem;
+    }
+
+    &__field {
+        position: relative;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    &__input {
+        width: 100%;
+        height: 3rem;
+        padding: 0 1rem;
+
+        font-size: 1.2rem;
+        background: none;
+        color: $font;
+
+        border: none;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom: 1px solid $primary;
+    }
+
+
+    &__input:focus {
+        outline: none;
+        border-bottom: none;
+    }
+
+    &__field-underline {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        
+        display: block;
+        width: 100%;
+        height: 1px;
+
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 0;
+            height: 100%;
+            @include ease-out(0.25s);
+        }
+
+        &::before {
+            right: 49.5%;
+            // background-image: linear-gradient(to right, $first-gradient-color, $second-gradient-color, $third-gradient-color);
+            background: $secondary;
+        }
+
+        &::after {
+            left: 50%;
+            // background-image: linear-gradient(to left, $second-gradient-color, $first-gradient-color, $third-gradient-color);
+            background: $secondary;
+        }
+    }
+
+    &__input:focus ~ &__field-underline::before,
+    &__input:focus ~ &__field-underline::after {
+        width: 50%;
+    }
+
+    &__message {
+        width: 100%;
+        padding: 0.5rem 1rem;
+        margin-top: 1.5rem;
+
+        color: $font;
+        text-align: justify;
+        font-size: 1.2rem;
+
+        border: 1px solid $primary;
+        border-left: none;
+        border-right: none;
+        background: none;
+        border-radius: 5px;
+    }
+
+    &__message:focus {
+        outline: none;
+        border-color: $secondary;
+    }
+
+    &__label {
+        position: absolute;
+        top: 50%;
+        left: 1rem;
+        transform: translateY(-50%);
+        font-size: 1.2rem;
+        font-style: italic;
+        color: $font-light;
+        @include ease-out(0.2s);
+
+        &--message {
+            top: 2rem;
+            transform: none;
+        }
+    }
+
+    
+    &__input--filled + &__label,
+    &__message--filled + &__label,
+    &__message:focus + &__label,
+    &__input:focus + &__label {
+        top: 0;
+        left: 0.2rem;
+
+        font-size: 0.9rem;
+        font-style: normal;
+        color: $font-light;
+    }
+
+    &__input:focus + &__label,
+    &__message:focus + &__label {
+        color: $secondary;
+    }
+
+    &__send {
+        display: block;
+        width: 10rem;
+        height: 3rem;
+        margin: 0 auto;
+
+        font-family: inherit;
+        font-size: 1.2rem;
+        background: none;
+        color: white;
+
+        border: 1px solid white;
+    }
+}
+
+@media (min-width: $tablet-width) {
+    .contact {
+        padding: 1rem 0;
+    }
+}
+
+@media (min-width: $desktop-width) {
+    .contact {
+        padding: 1.5rem 0;
+
+        &__field {
+            width: 50%;
+        }
+    }
+}

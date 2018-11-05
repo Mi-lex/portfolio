@@ -354,33 +354,37 @@
                 </ul>
             </div>
         </section>
-        <section class="contacts">
-            <form action="POST" class="contacts__form">
-                <fieldset class="contacts__form-container">
-                    <legend class="contacts__heading">
-                        <h2 class="contacts__title">
-                            Leave your contacts so I can reach you
+        <section class="contact">
+            <form action="POST" class="contact__form">
+                <fieldset class="contact__form-container">
+                    <legend class="contact__heading">
+                        <h2 class="contact__title section-title">
+                            Contact
                         </h2>
                     </legend>
-                    <div class="contacts__field">
-                        <label for="" class="contacts__fiels-label visually-hidden">
-                            Name:
+                    <div class="contact__field">
+                        <input type="text" class="contact__input" name="name">
+                        <label for="" class="contact__label">
+                            Name
                         </label>
-                        <input type="text" class="contacts__input" name="name">
+                        <span class="contact__field-underline">
+                        </span>
                     </div>
-                    <div class="contacts__field">
-                        <label for="" class="contacts__fiels-label visually-hidden">
-                            Email:
+                    <div class="contact__field">
+                        <input type="email" class="contact__input" name="email">
+                        <label for="" class="contact__label">
+                            Email
                         </label>
-                        <input type="email" class="contacts__input" name="email">
+                        <span class="contact__field-underline">
+                        </span>
                     </div>
-                    <div class="contacts__field">
-                        <label for="" class="contacts__fiels-label visually-hidden">
-                            Leave your message:
+                    <div class="contact__field">
+                        <textarea class="contact__message" name="message" id="message" rows="8"></textarea>
+                        <label for="" class="contact__label contact__label--message">
+                            Message
                         </label>
-                        <textarea class="contacts__input" name="message" id="message" cols="30" rows="10"></textarea>
                     </div>
-                    <input type="submit" value="Send">
+                    <input class="contact__send" type="submit" value="Send">
                 </fieldset>
             </form>
         </section>
