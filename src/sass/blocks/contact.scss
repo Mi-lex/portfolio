@@ -1,34 +1,63 @@
 .contact {
     width: 100%;
-    min-height: 100vh;
-    // background: linear-gradient(to right, #ff7e5f, #feb47b);
-    // background: linear-gradient(to right, #8190b8, #50588b);
-    // background: linear-gradient(to right, #77a1d3, #79cbca, #e684ae);
-    // background: linear-gradient(to right, #c31432, #240b36); // desktop
-    // background: linear-gradient(to right, #c31432, #3a1257); // mobile-tablet
-    // background: linear-gradient(to right, #ad5389, #3c1053);
-    // background: linear-gradient(to right, #4568dc, #b06ab3);
-    // background: linear-gradient(to right, #494d99, #8f94fb);
-    // background: linear-gradient(to left, #b993d6, #8ca6db);
-    // background: #ad559a;
-    $bg-color: #7452cc;
+    padding-bottom: 1rem;
+
+    background: #6A8BCE linear-gradient(to right, #6A8BCE, #BD95DC);
+
     $primary: white;
     $secondary: black;
     $font: white;
-    $font-light: rgba(240, 240, 240, 0.75);
+    $font-light: #e9e4f6;
 
-    $first-gradient-color: #780206;
-    $second-gradient-color: #061161;
-    $third-gradient-color: #050c44;
-
-    background: $bg-color;
     color: $font;
 
-
-
-    &__form {
+    &__wrapper {
         @include wrapper;
     }
+
+    &__info {
+        margin-bottom: 2rem;
+    }
+
+    &__note {
+        margin: 1rem 0;
+        color: rgb(233, 228, 246);
+        text-align: right;
+    }
+
+    &__info-field {
+        position: relative;
+
+        display: block;
+        width: 100%;
+        max-width: 380px;
+        height: 3rem;
+        padding-left: 1rem;
+        padding-right: 45px;
+
+        font-size: 1.3rem;
+        line-height: 3rem;
+        font-style: italic;
+        font-weight: normal;
+
+        border: 1px solid white;
+    }
+
+    &__info-field:not(:last-of-type) {
+        border-bottom: none;
+    }
+
+    &__info-icon {
+        position: absolute;
+        top: 50%;
+        right: 0.5rem;
+
+        display: block;
+        width: 35px;
+        height: 35px;
+        transform: translateY(-50%);
+        fill: white;
+    }   
 
     &__form-container {
         width: 100%;
@@ -51,22 +80,76 @@
         width: 100%;
         height: 3rem;
         padding: 0 1rem;
+        padding-right: 2rem;
 
         font-size: 1.2rem;
         background: none;
         color: $font;
 
         border: none;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
         border-bottom: 1px solid $primary;
     }
 
 
     &__input:focus {
         outline: none;
+        background: none;
         border-bottom: none;
     }
+
+    &__clear-field {
+        position: absolute;
+        top: 50%;
+        right: 0.5rem;
+
+        height: 1.5rem;
+        width: 1.5rem;
+        opacity: 0;
+
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        border-radius: 50%;
+
+        @include ease-out(0.2s);
+    }
+
+    &__clear-field::before, &__clear-field::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        display: block;
+        height: 100%;
+        width: 1px;
+        background: black;
+    }
+
+    &__clear-field::before {
+        left: 50%;
+        transform: rotate(45deg);
+    }
+
+    &__clear-field::after {
+        right: 50%;
+        transform: rotate(-45deg);
+
+    }
+
+    &__input--filled ~ &__clear-field {
+        opacity: 1;
+    }
+
+    &__input--filled ~ &__clear-field::before,
+    &__input--filled ~ &__clear-field::after {
+        background: white;
+    }
+
+    &__input:focus ~ &__clear-field {
+        opacity: 1;
+    }
+    
 
     &__field-underline {
         position: absolute;
@@ -87,14 +170,12 @@
         }
 
         &::before {
-            right: 49.5%;
-            // background-image: linear-gradient(to right, $first-gradient-color, $second-gradient-color, $third-gradient-color);
+            right: 50%;
             background: $secondary;
         }
 
         &::after {
             left: 50%;
-            // background-image: linear-gradient(to left, $second-gradient-color, $first-gradient-color, $third-gradient-color);
             background: $secondary;
         }
     }
@@ -114,10 +195,7 @@
         font-size: 1.2rem;
 
         border: 1px solid $primary;
-        border-left: none;
-        border-right: none;
         background: none;
-        border-radius: 5px;
     }
 
     &__message:focus {
@@ -161,7 +239,7 @@
 
     &__send {
         display: block;
-        width: 10rem;
+        width: 11rem;
         height: 3rem;
         margin: 0 auto;
 
@@ -177,15 +255,125 @@
 @media (min-width: $tablet-width) {
     .contact {
         padding: 1rem 0;
+        padding-bottom: 2rem;
+
+        &__note {
+            width: 100%;
+            font-size: 1.3rem;
+        }
+
+        &__info {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        &__info-field {
+            width: 50%;
+            height: 4rem;
+            max-width: 420px;
+
+            font-size: 1.6rem;
+            line-height: 4rem;
+        }
+
+        &__info-field:not(:last-of-type) {
+            border-bottom: 1px solid white;
+            border-right: none;
+        }
+
+        &__info-icon {
+            width: 40px;
+            height: 40px;
+        }
+
+        &__form-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        
+        &__field {
+            margin-bottom: 1.6rem;
+        }
+
+        &__field--half {
+            width: 48%;
+        }
+
+        &__input {
+            font-size: 1.6rem;
+            height: 3.4rem;
+            padding-right: 2.5rem;
+        }
+
+        &__clear-field {
+            width: 1.8rem;
+            height: 1.8rem;
+        }
+
+        &__label {
+            font-size: 1.6rem;
+        }
+
+        &__message {
+            padding-top: 1rem;
+            font-size: 1.6rem;
+        }
+
+        &__input--filled + &__label,
+        &__message--filled + &__label,
+        &__message:focus + &__label,
+        &__input:focus + &__label {
+            font-size: 1rem;
+        }
+
+        &__send {
+            font-size: 1.6rem;
+            height: 4rem;
+            width: 16rem;
+        }
     }
 }
 
 @media (min-width: $desktop-width) {
     .contact {
         padding: 1.5rem 0;
+        padding-bottom: 2.5rem;
 
-        &__field {
-            width: 50%;
+        &__input:hover,
+        &__message:hover {
+            background: rgba(16, 18, 22, 0.2);
+        }
+
+        &__input:focus,
+        &__message:focus {
+            background: none;
+        }
+
+        &__clear-field {
+            cursor: pointer;
+        }
+
+        &__clear-field:hover {
+            transform: scale(1.2) translateY(-50%);
+        }
+
+        &__send {
+            @include ease-out(0.3s);
+        }
+
+        &__send:hover {
+            background: rgba(16, 18, 22, 0.75);
+            border: none;
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        }
+
+        &__send:focus {
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            border: none;
+            background: rgba(16, 18, 22, 0.75);
+            outline: none;
         }
     }
 }

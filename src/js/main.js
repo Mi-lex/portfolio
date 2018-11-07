@@ -10,6 +10,8 @@ import "./../img/icons/typescript.svg";
 import "./../img/icons/laravel.svg";
 import "./../img/icons/gulp.svg";
 import "./../img/icons/safari-panel.svg";
+import "./../img/icons/phone.svg";
+import "./../img/icons/mail.svg";
 import './../img/me-desktop(2x).jpg';
 
 // navigation
