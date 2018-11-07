@@ -415,30 +415,40 @@
             </div>
         </section>
     </main>
-    <footer class="page-footer" style="height: 100vh;">
+    <footer class="page-footer">
         <section class="social">
-            <h2 class="social__title">
-                Let's get social
+            <h2 class="social__title visually-hidden">
+                Social
             </h2>
             <ul class="social__list">
                 <li class="social__item">
                     <a href="" class="social__link">
-                        VK
+                        <svg class="social__icon">
+                            <use xlink:href="build/img/sprite.svg#vk"></use>
+                        </svg>
+                        <span class="visually-hidden">Vkontakte</span>
                     </a>
                 </li>
                 <li class="social__item">
                     <a href="" class="social__link">
-                        FB
+                        <span class="visually-hidden">Facebook</span>
+                        <svg class="social__icon">
+                            <use xlink:href="build/img/sprite.svg#fb"></use>
+                        </svg>
                     </a>
                 </li>
                 <li class="social__item">
                     <a href="" class="social__link">
-                        GITHUB
+                        <span class="visually-hidden">Github</span>
+                        <svg class="social__icon">
+                            <use xlink:href="build/img/sprite.svg#github"></use>
+                        </svg>
                     </a>
                 </li>
             </ul>
         </section>
     </footer>
+    <!-- <section class="promo"></section> -->
     <script src="./build/app.js"></script>
 </body>
 

@@ -12,6 +12,9 @@ import "./../img/icons/gulp.svg";
 import "./../img/icons/safari-panel.svg";
 import "./../img/icons/phone.svg";
 import "./../img/icons/mail.svg";
+import "./../img/icons/vk.svg";
+import "./../img/icons/fb.svg";
+import "./../img/icons/github.svg";
 import './../img/me-desktop(2x).jpg';
 
 // navigation
