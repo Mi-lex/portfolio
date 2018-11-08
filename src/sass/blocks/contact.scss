@@ -1,15 +1,33 @@
+/*  
+    colors:
+        font-color: white;
+        font-light-color: #e9e4f6;
+        secondary-color-color: black;
+    mobile-sizes:
+        font-size for input / labels / info fields: 1.3rem;
+        font-size for small label: 0.9rem
+
+    tablet/desktop sizes:
+        font-size for input / labels / info fields: 1.6rem;
+        font-size for small label: 1rem;
+*/
+
+
 .contact {
+    $mobile-font-size: 1.3rem; // inputs, labels, info fiels
+    $mobile-font-size-small: 0.9rem; // labels when inputs are focused
+    $font-color: white;
+    $font-light-color: #e9e4f6;
+    $primary-color: white;
+    $secondary-color: black; // borders, underlines, X icon when inputs are focused
+
     width: 100%;
     padding-bottom: 1rem;
 
     background: #6A8BCE linear-gradient(to right, #6A8BCE, #BD95DC);
+    color: $font-color;
 
-    $primary: white;
-    $secondary: black;
-    $font: white;
-    $font-light: #e9e4f6;
-
-    color: $font;
+    font-size: $mobile-font-size;
 
     &__wrapper {
         @include wrapper;
@@ -21,8 +39,15 @@
 
     &__note {
         margin: 1rem 0;
-        color: rgb(233, 228, 246);
+        color: $font-light-color;
+        font-size: 1rem;
         text-align: right;
+    }
+
+    &__input, &__message, &__send, 
+    &__info-field, &__label {
+        font-size: inherit;
+        color: inherit;
     }
 
     &__info-field {
@@ -34,13 +59,12 @@
         height: 3rem;
         padding-left: 1rem;
         padding-right: 45px;
-
-        font-size: 1.3rem;
-        line-height: 3rem;
+        
         font-style: italic;
         font-weight: normal;
+        line-height: 3rem;
 
-        border: 1px solid white;
+        border: 1px solid $primary-color;
     }
 
     &__info-field:not(:last-of-type) {
@@ -56,15 +80,8 @@
         width: 35px;
         height: 35px;
         transform: translateY(-50%);
-        fill: white;
+        fill: $primary-color;
     }   
-
-    &__form-container {
-        width: 100%;
-        border: none;
-        margin: 0;
-        padding: 0;
-    }
 
     &__heading {
         margin-bottom: 1rem;
@@ -82,14 +99,12 @@
         padding: 0 1rem;
         padding-right: 2rem;
 
-        font-size: 1.2rem;
         background: none;
-        color: $font;
 
         border: none;
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
-        border-bottom: 1px solid $primary;
+        border-bottom: 1px solid $primary-color;
     }
 
 
@@ -123,7 +138,7 @@
         display: block;
         height: 100%;
         width: 1px;
-        background: black;
+        background: $secondary-color;
     }
 
     &__clear-field::before {
@@ -143,7 +158,7 @@
 
     &__input--filled ~ &__clear-field::before,
     &__input--filled ~ &__clear-field::after {
-        background: white;
+        background: $primary-color;
     }
 
     &__input:focus ~ &__clear-field {
@@ -166,17 +181,16 @@
             display: block;
             width: 0;
             height: 100%;
-            @include ease-out(0.25s);
+            @include ease-out(0.3s);
+            background: $secondary-color;
         }
 
         &::before {
             right: 50%;
-            background: $secondary;
         }
 
         &::after {
             left: 50%;
-            background: $secondary;
         }
     }
 
@@ -190,17 +204,15 @@
         padding: 0.5rem 1rem;
         margin-top: 1.5rem;
 
-        color: $font;
         text-align: justify;
-        font-size: 1.2rem;
 
-        border: 1px solid $primary;
+        border: 1px solid $primary-color;
         background: none;
     }
 
     &__message:focus {
         outline: none;
-        border-color: $secondary;
+        border-color: $secondary-color;
     }
 
     &__label {
@@ -208,9 +220,7 @@
         top: 50%;
         left: 1rem;
         transform: translateY(-50%);
-        font-size: 1.2rem;
         font-style: italic;
-        color: $font-light;
         @include ease-out(0.2s);
 
         &--message {
@@ -227,14 +237,14 @@
         top: 0;
         left: 0.2rem;
 
-        font-size: 0.9rem;
+        font-size: $mobile-font-size-small;
         font-style: normal;
-        color: $font-light;
+        color: $font-light-color;
     }
 
     &__input:focus + &__label,
     &__message:focus + &__label {
-        color: $secondary;
+        color: $secondary-color;
     }
 
     &__send {
@@ -244,18 +254,22 @@
         margin: 0 auto;
 
         font-family: inherit;
-        font-size: 1.2rem;
         background: none;
-        color: white;
 
-        border: 1px solid white;
+        border: 1px solid $primary-color;
+        cursor: pointer;
     }
 }
 
 @media (min-width: $tablet-width) {
     .contact {
+        $tablet-font-size: 1.6rem;
+        $tablet-font-size-small: 1rem;
+
         padding: 1rem 0;
         padding-bottom: 2rem;
+
+        font-size: $tablet-font-size;
 
         &__note {
             width: 100%;
@@ -272,7 +286,6 @@
             height: 4rem;
             max-width: 420px;
 
-            font-size: 1.6rem;
             line-height: 4rem;
         }
 
@@ -302,7 +315,6 @@
         }
 
         &__input {
-            font-size: 1.6rem;
             height: 3.4rem;
             padding-right: 2.5rem;
         }
@@ -312,24 +324,18 @@
             height: 1.8rem;
         }
 
-        &__label {
-            font-size: 1.6rem;
-        }
-
         &__message {
             padding-top: 1rem;
-            font-size: 1.6rem;
         }
 
         &__input--filled + &__label,
         &__message--filled + &__label,
         &__message:focus + &__label,
         &__input:focus + &__label {
-            font-size: 1rem;
+            font-size: $tablet-font-size-small;
         }
 
         &__send {
-            font-size: 1.6rem;
             height: 4rem;
             width: 16rem;
         }
@@ -343,7 +349,7 @@
 
         &__input:hover,
         &__message:hover {
-            background: rgba(16, 18, 22, 0.2);
+            @include main-tone-bg(0.2);
         }
 
         &__input:focus,
@@ -372,8 +378,8 @@
         &__send:focus {
             box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
             border: none;
-            background: rgba(16, 18, 22, 0.75);
             outline: none;
+            @include main-tone-bg(0.75);
         }
     }
 }

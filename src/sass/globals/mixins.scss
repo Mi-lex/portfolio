@@ -8,26 +8,13 @@
   width: 80vw;
   margin: 0 auto;
   
-  @media (max-width: $tablet-width-only) {
+  @media (max-width: $tablet-mobile-width-only) {
     width: 90vw;
   }
 
   @media (min-width: $desktop-width) {
     max-width: $desktop-wrapper-width;
   }
-}
-
-@mixin overlay($background-image) {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-
-  display: block;
-  width: 100%;
-  height: 100%;
-  background-image: $background-image;
-  z-index: 0;
 }
 
 @mixin page-section-background
@@ -74,4 +61,12 @@
 
 @mixin ease-out($duration) {
   transition: all $duration ease-out;
+}
+
+@mixin main-tone-bg($opacity) {
+  background: rgba(16, 18, 22, $opacity);
+}
+
+@mixin main-gradient($direction) {
+  background: #77a1d3 linear-gradient($direction, #77a1d3, #79cbca, #e684ae);
 }

@@ -18,7 +18,7 @@
         width: 100%;
         padding: 0;
         padding-bottom: 0.5rem;
-        background: rgba(19, 21, 25, 0.5);
+        @include main-tone-bg(0.5);
     }
 
     &__content {
@@ -46,7 +46,7 @@
         margin-bottom: 0.5rem;
         padding: 0;
         align-self: center;
-        background: linear-gradient(to right, #77a1d3, #79cbca, #e684ae);
+        @include main-gradient(to right);
         border-radius: 50%;
     }
 
@@ -81,9 +81,7 @@
         flex-flow: wrap;
         flex-direction: row;
         justify-content: space-around;
-        margin: 0;
-        padding: 0;
-        list-style: none;
+        @include custom-list;
     }
 
     &__skills-link {
@@ -141,8 +139,7 @@
         &__img-frame {
             width: 40%;
             height: auto;
-            margin: 0;
-            padding: 0;
+            margin-bottom: 0;
         }
 
         &__img-frame::after {

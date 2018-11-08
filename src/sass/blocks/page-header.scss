@@ -8,6 +8,6 @@
 @media (min-width: $tablet-width) {
     .page-header {
         width: 100vw;
-        background: rgba(16, 18, 22, 0.3);
+        @include main-tone-bg(0.3);
     }
 }

@@ -1,20 +1,19 @@
 .projects {
     width: 100%;
-    background: linear-gradient(to right, #b993d6, #8ca6db);
+    padding-bottom: 0.5rem;
+    background: #b993d6 linear-gradient(to right, #b993d6, #8ca6db);
 
     &__wrapper {
         @include wrapper;
     }
 
     &__list {
+        @include custom-list;
         display: flex;
         justify-content: space-around;
         align-items: center;
         width: 100%;
-        margin: 0;
-        padding: 0;
         flex-direction: column;
-        list-style: none;
     }  
 }
 
