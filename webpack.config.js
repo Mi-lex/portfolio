@@ -84,9 +84,9 @@ const config = {
     plugins: [
         new ExtractTextPlugin("[name].css"),
         new SpriteLoaderPlugin(),
-        new PurifyCSSPlugin({
-            paths: glob.sync(path.join(__dirname, 'index.html')),
-        }),
+        // new PurifyCSSPlugin({
+        //     paths: glob.sync(path.join(__dirname, 'index.html')),
+        // }),
     ],
 
     optimization: {

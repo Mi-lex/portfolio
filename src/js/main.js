@@ -17,25 +17,14 @@ import "./../img/icons/fb.svg";
 import "./../img/icons/github.svg";
 import './../img/me-desktop(2x).jpg';
 
-// navigation
+// modules
 
-const menuToggler = document.querySelector('.page-nav__menu-toggler');
-const pageNav = document.querySelector('.page-nav');
+import customPolyfills from './assets/custom-polyfils';
+import menuToggler from './assets/menuToggler';
+import projectInfo from './assets/projectInfo';
+import nav from './assets/nav';
 
-const toggleMenu = () => {
-    pageNav.classList.toggle('page-nav--closed');
-};
-
-menuToggler.addEventListener('click', toggleMenu);
-
-// projects
-
-const projectContainer = document.querySelector('.projects__list');
-
-const toggleProjectInfo = (e) => {
-    if (e.target.className === 'project__content-toggler') {
-        e.target.closest('.project__container').classList.toggle('project__container--closed');
-    }
-};
-
-projectContainer.addEventListener('click', toggleProjectInfo);
+customPolyfills();
+menuToggler();
+projectInfo();
+nav();
