@@ -15,10 +15,14 @@ import "./../img/icons/mail.svg";
 import "./../img/icons/vk.svg";
 import "./../img/icons/fb.svg";
 import "./../img/icons/github.svg";
+import './../img/me-desktop.jpg';
 import './../img/me-desktop(2x).jpg';
+import './../img/me-mobile.jpg';
+import './../img/me-mobile(2x).jpg';
 
 // modules
-
+import "./static/picturefill.min";
+import "svgxuse";
 import customPolyfills from './assets/custom-polyfils';
 import menuToggler from './assets/menuToggler';
 import projectInfo from './assets/projectInfo';

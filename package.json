@@ -12,7 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "extract-text-webpack-plugin": "^4.0.0-alpha.0"
+    "extract-text-webpack-plugin": "^4.0.0-alpha.0",
+    "svgxuse": "^1.2.6"
   },
   "devDependencies": {
     "@babel/core": "^7.1.5",

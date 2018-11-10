@@ -7,6 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title></title>
     <link rel="stylesheet" href="build/app.css">
+    <script>
+        // Picture element HTML5 shiv
+        document.createElement( "picture" );
+    </script>
+    <script src="./build/static/picturefill.min.js" async></script>
 </head>
 
 <body>
@@ -36,11 +41,9 @@
     <main>
         <section class="promo" id="home">
             <div class="promo__container">
-                <div class="promo__icon">
-                    <svg width="80%" height="80%">
-                        <use xlink:href="build/img/sprite.svg#web"></use>
-                    </svg>
-                </div>
+                <svg class="promo__icon">
+                    <use xlink:href="build/img/sprite.svg#web"></use>
+                </svg>
                 <h1 class="promo__title">
                     Alex
                 </h1>
@@ -54,8 +57,12 @@
                     </h2>
                     <div class="about__upper-subcontent">
                         <figure class="about__img-frame">
-                            <img src="build/img/me-desktop(2x).jpg" alt="picture of Alexey" class="about__img" width="95%"
-                                height="95%">
+                            <picture>
+                                <source media="(min-width: 1150px)" srcset="build/img/me-desktop.jpg 1x,
+                                                                            build/img/me-desktop(2x).jpg 2x">
+                                <img src="build/img/me-mobile.jpg" srcset="build/img/me-mobile(2x).jpg 2x" 
+                                    role="img" alt="picture of Alexey" style="width: 95%; height: 95%" class="about__img">
+                        </picture>
                         </figure>
                         <section class="about__bio">
                             <p class="about__bio-text">

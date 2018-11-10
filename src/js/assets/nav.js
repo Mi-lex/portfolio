@@ -79,7 +79,7 @@ export default function nav() {
                     document.querySelector('.page-nav__item--active')
                         .classList.remove('page-nav__item--active');
                     link.closest('.page-nav__item').classList.add('page-nav__item--active');
-                }, 200);
+                }, 80);
             }
         });
     }

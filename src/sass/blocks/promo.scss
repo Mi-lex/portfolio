@@ -55,11 +55,8 @@
 
     &__icon {
         order: -1;
-        width: 70px;
+        width: 75px;
         height: 70px;
-        padding-top: 15px;
-        border: 1px solid #e684ae;
-        border-radius: 50%;
     }
 
 
@@ -105,9 +102,8 @@
 @media (min-width: $tablet-width) {
     .promo {
         &__icon {
-            width: 80px;
+            width: 85px;
             height: 80px;
-            padding-top: 18px;
         }
 
         &__title {
@@ -122,9 +118,8 @@
         box-shadow: 0 5px 1px 2px rgba(0, 0, 0, 0.55);
 
         &__icon {
-            width: 85px;
+            width: 90px;
             height: 85px;
-            padding-top: 18px;
         }
 
         &__title {

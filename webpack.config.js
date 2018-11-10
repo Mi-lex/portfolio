@@ -24,8 +24,24 @@ const config = {
         rules: [
             {
                 test: /\.js$/,
-                exclude: /node_modules/,
+                exclude: [
+                    path.resolve(__dirname, './node_modules'),
+                    path.resolve(__dirname, './src/js/static'),
+                ],
                 loader: "babel-loader"
+            },
+            {
+                test: /\.js$/,
+                include: path.resolve(__dirname, "./src/js/static"),
+                loaders: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: './static/[name].[ext]'
+                        }
+                    }
+                ]
+                
             },
             {
                 test: /\.css$/,
