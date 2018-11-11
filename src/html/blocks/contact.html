@@ -1,0 +1,60 @@
+<section class="contact" id="contact">
+    <div class="contact__wrapper">
+        <h2 class="contact__title section-title">
+                Contact
+        </h2>
+        <section class="contact__info">
+            <p class="contact__note">
+                You can contact me
+            </p>
+            <strong class="contact__info-field">
+                +7 000-000-00-00
+                <svg class="contact__info-icon">
+                    <use xlink:href="./img/sprite.svg#phone"></use>
+                </svg>
+            </strong>
+            <strong class="contact__info-field">
+                mishin-lex@mail.ru
+                <svg class="contact__info-icon">
+                    <use xlink:href="./img/sprite.svg#mail"></use>
+                </svg>
+            </strong>
+        </section>
+        <form action="POST" class="contact__form">
+            <p class="contact__note">
+                Or leave a messege
+            </p>
+            <div class="contact__form-container">
+                <div class="contact__field contact__field--half">
+                    <input type="text" class="contact__input" name="name">
+                    <label for="" class="contact__label">
+                        Name
+                    </label>
+                    <button class="contact__clear-field">
+                            <span class="visually-hidden">Clear field</span>
+                    </button>
+                    <span class="contact__field-underline">
+                    </span>
+                </div>
+                <div class="contact__field contact__field--half">
+                    <input type="email" class="contact__input" name="email">
+                    <label for="" class="contact__label">
+                        Email
+                    </label>
+                    <button class="contact__clear-field">
+                        <span class="visually-hidden">Clear field</span>
+                    </button>
+                    <span class="contact__field-underline">
+                    </span>
+                </div>
+                <div class="contact__field">
+                    <textarea class="contact__message" name="message" id="message" rows="8"></textarea>
+                    <label for="" class="contact__label contact__label--message">
+                        Message
+                    </label>
+                </div>
+                <input class="contact__send" type="submit" value="Send">
+            </div>
+        </form>
+    </div>
+</section>

@@ -6,6 +6,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const PurifyCSSPlugin = require('purifycss-webpack');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
     entry: {
@@ -22,6 +23,10 @@ const config = {
 
     module: {
         rules: [
+            { 
+                test: /\.html$/, 
+                loader: 'html-loader'
+            },
             {
                 test: /\.js$/,
                 exclude: [
@@ -100,6 +105,9 @@ const config = {
     plugins: [
         new ExtractTextPlugin("[name].css"),
         new SpriteLoaderPlugin(),
+        new HtmlWebpackPlugin({
+            template: './src/html/main.html.js'
+        }),
         // new PurifyCSSPlugin({
         //     paths: glob.sync(path.join(__dirname, 'index.html')),
         // }),
