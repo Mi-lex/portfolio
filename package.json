@@ -17,7 +17,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.1.5",
-    "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.1.5",
     "babel-loader": "^8.0.4",
     "clean-webpack-plugin": "^0.1.19",
@@ -30,8 +29,6 @@
     "node-sass": "^4.10.0",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.4.0",
-    "purify-css": "^1.2.6",
-    "purifycss-webpack": "^0.7.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "svg-sprite-loader": "^4.1.3",

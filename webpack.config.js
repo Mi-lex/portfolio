@@ -1,10 +1,8 @@
 const webpack = require('webpack');
 const path = require('path');
-const glob = require('glob');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const PurifyCSSPlugin = require('purifycss-webpack');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -74,7 +72,7 @@ const config = {
                 }
             },
             {
-                test: /\.(png|jpe?g|gif)$/,
+                test: /\.(png|jpe?g|gif|webp)$/,
                 loaders: [
                     {
                         loader: 'file-loader',
@@ -108,9 +106,6 @@ const config = {
         new HtmlWebpackPlugin({
             template: './src/html/main.html.js'
         }),
-        // new PurifyCSSPlugin({
-        //     paths: glob.sync(path.join(__dirname, 'index.html')),
-        // }),
     ],
 
     optimization: {
