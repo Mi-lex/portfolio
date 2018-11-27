@@ -8,13 +8,13 @@
 
     // Set backgrounds using mixin
     @include page-section-background(
-        './../img/bridge-mobile-360.jpg',
-        './../img/bridge-mobile-360(2x).jpg',
-        './../img/bridge-tablet-768.jpg',
-        './../img/bridge-tablet-768(2x).jpg',
-        './../img/bridge-desktop-1440.jpg',
-        './../img/bridge-desktop-1440(2x).jpg',
-        './../img/bridge-desktop-1920.jpg',
+        'bridge-mobile(360)@1x.jpg',
+        'bridge-mobile(360)@2x.jpg',
+        'bridge-tablet(768)@1x.jpg',
+        'bridge-tablet(768)@2x.jpg',
+        'bridge-desktop(1440)@1x.jpg',
+        'bridge-desktop(1440)@2x.jpg',
+        'bridge-desktop(1920)@1x.jpg',
     );
 
     &::after {

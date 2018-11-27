@@ -3,20 +3,20 @@
     min-height: 100vh;
 
     @include page-section-background(
-        './../img/mountain-mobile-360.jpg',
-        './../img/mountain-mobile-360(2x).jpg',
-        './../img/mountain-tablet-768.jpg',
-        './../img/mountain-tablet-768(2x).jpg',
-        './../img/mountain-desktop-1440.jpg',
-        './../img/mountain-desktop-1440(2x).jpg',
-        './../img/mountain-desktop-1920.jpg',
+        'mountain-mobile(360)@1x.jpg',
+        'mountain-mobile(360)@2x.jpg',
+        'mountain-tablet(768)@1x.jpg',
+        'mountain-tablet(768)@2x.jpg',
+        'mountain-desktop(1440)@1x.jpg',
+        'mountain-desktop(1440)@2x.jpg',
+        'mountain-desktop(1920)@1x.jpg',
     );
 
     &__wrapper {
-        position: relative;
+        @include section-divider;
         width: 100%;
         padding: 0;
-        padding-bottom: 0.5rem;
+        padding-bottom: 1rem;
         @include main-tone-bg(0.5);
     }
 
@@ -85,11 +85,13 @@
         @include custom-list;
     }
 
-    &__skills-link {
+    &__skills-name {
         display: block;
         height: 20%;
         min-height: 2rem;
+
         font-size: 1.2rem;
+        font-weight: normal;
         line-height: 2rem;
         text-decoration: none;
         color: inherit;

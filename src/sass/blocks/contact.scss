@@ -6,6 +6,8 @@
     $primary-color: white;
     $secondary-color: black; // borders, underlines, X icon when inputs are focused
 
+    @include section-divider;
+
     width: 100%;
     padding-bottom: 1rem;
 
@@ -76,6 +78,10 @@
         position: relative;
         width: 100%;
         margin-bottom: 1rem;
+    }
+
+    &__form {
+        margin-bottom: 0;
     }
 
     &__input {
