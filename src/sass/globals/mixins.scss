@@ -47,6 +47,13 @@
 
   @media (min-width: $desktop-width) {
     background-attachment: fixed;
+
+    // Remove fixed attachment for IE
+    @media screen and (-ms-high-contrast: active), 
+      (-ms-high-contrast: none) {
+        background-attachment: scroll;
+    }
+
     background-image: url($background-path + $desktop-bg-img-small);
     
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
