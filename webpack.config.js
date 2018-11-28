@@ -85,6 +85,13 @@ const config = {
                 ],
             },
             {
+                test: /\.(ico)$/,
+                loader: 'file-loader',
+                options: {
+                    name: './[name].[ext]'
+                }
+            },
+            {
                 test: /\.svg$/,
                 use: [
                     {
