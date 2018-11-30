@@ -171,28 +171,13 @@
         width: 100%;
         height: 1px;
 
-        &::before, &::after {
-            content: '';
-            position: absolute;
-            display: block;
-            width: 0;
-            height: 100%;
-            @include ease-out(0.3s);
-            background: $secondary-color;
-        }
-
-        &::before {
-            right: 50%;
-        }
-
-        &::after {
-            left: 50%;
-        }
+        @include ease-out(0.3s);
+        background: $secondary-color;
+        transform: scale(0);
     }
 
-    &__input:focus ~ &__field-underline::before,
-    &__input:focus ~ &__field-underline::after {
-        width: 50%;
+    &__input:focus ~ &__field-underline {
+        transform: scale(1);
     }
 
     &__message {
