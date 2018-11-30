@@ -3,9 +3,13 @@ $background-path: './../img/backgrounds/';
 
 /* Global fonts rules */
 $page-font: 'Source Sans Pro', sans-serif;
-$page-font-size: 17px;
 $page-font-color: white;
 $page-line-height: normal;
+
+$mobile-font-size: 16px;
+$tablet-font-size: 20px;
+
+
 
 /* Sizes */
 $mobile-width: 320px;
@@ -13,9 +17,7 @@ $tablet-width: 768px;
 $desktop-width: 1150px;
 $desktop-large-width: 1600px;
 
-$mobile-header-height: 3rem; // Depends on height of menu toggler
-$tablet-header-height: 30px; // Remeasure
-$desktop-header-height: 30px; // Remeasure
+$mobile-header-height: 48px; // Depends on height of menu toggler
 
 $mobile-width-only: $tablet-width - 1px;
 $tablet-mobile-width-only: $desktop-width - 1px;
@@ -23,6 +25,13 @@ $tablet-mobile-width-only: $desktop-width - 1px;
 $mobile-wrapper-width: 260px;
 $tablet-wrapper-width: 668px;
 $desktop-wrapper-width: 1050px;
+
+// margins between small sections
+$mobile-big-section-indent: 28px;
+$tablet-big-section-indent: 44px;
+
+$mobile-small-sections-space: 24px;
+$tablet-small-sections-space: 44px;
 
 /* Resolucions */
 $retina-dpi: 144dpi;

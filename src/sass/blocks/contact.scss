@@ -9,7 +9,6 @@
     @include section-divider;
 
     width: 100%;
-    padding-bottom: 1rem;
 
     background: #6A8BCE linear-gradient(to right, #6A8BCE, #BD95DC);
     color: $font-color;
@@ -18,14 +17,16 @@
 
     &__wrapper {
         @include wrapper;
+        padding: $mobile-big-section-indent 0;
     }
 
     &__info {
-        margin-bottom: 2rem;
+        margin-bottom: $mobile-small-sections-space;
     }
 
     &__note {
-        margin: 1rem 0;
+        margin: 0;
+        margin-bottom: 1rem;
         color: $font-light-color;
         font-size: 1rem;
         text-align: right;
@@ -260,10 +261,11 @@
         $tablet-font-size: 1.6rem;
         $tablet-font-size-small: 1rem;
 
-        padding: 1rem 0;
-        padding-bottom: 2rem;
-
         font-size: $tablet-font-size;
+
+        &__wrapper {
+            padding: $tablet-big-section-indent 0;
+        }
 
         &__note {
             width: 100%;
@@ -273,6 +275,7 @@
         &__info {
             display: flex;
             flex-wrap: wrap;
+            margin-bottom: $tablet-small-sections-space;
         }
 
         &__info-field {

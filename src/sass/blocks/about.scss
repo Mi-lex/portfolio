@@ -13,19 +13,17 @@
 
     &__layout{
         @include section-divider;
-        width: 100%;
-        padding: 0;
-        padding-bottom: 1rem;
-        @include main-tone-bg(0.5);
+        @include main-tone-bg(0.6);
     }
 
     &__wrapper {
         @include wrapper;
+        padding: $mobile-big-section-indent 0;
     }
 
     &__initial {
         display: flex;
-        margin-bottom: 0.5rem;
+        margin-bottom: $mobile-small-sections-space;
     }
 
     &__img-frame {
@@ -97,17 +95,18 @@
     &__bio {
         width: 100%;
         text-align: justify;
+        margin-bottom: $mobile-small-sections-space;
     }
 
     &__bio-text {
         margin: 0;
-        margin-bottom: 1rem;
+        line-height: 1.5;
         text-indent: 1.5em;
     }
 
     &__subtitle {
         margin: 0;
-        margin-bottom: 0.5rem;
+        margin-bottom: 16px;
 
         font-size: 1.3rem;
         font-style: italic;
@@ -128,7 +127,7 @@
     &__tool {
         position: relative;
 
-        margin-bottom: 15px;
+        margin-top: 16px;
         padding-left: 12%;
 
         &::before {
@@ -199,7 +198,8 @@
     position: relative;
     width: calc(100% / 4);
     max-width: 55px;
-    margin: 5px 2%;
+    margin-right: 4%;
+    margin-top: 5px;
 
     @media (orientation: landscape) {
         width: calc(100% / 7);
@@ -219,15 +219,17 @@
 
 @media (min-width: $tablet-width) {
     .about {
-        min-height: auto;
-
-        &__layout {
-            padding: 1rem 0;
-            min-height: auto;
+        &__wrapper {
+            padding: $tablet-big-section-indent 0;
         }
 
         &__initial {
             justify-content: space-between;
+            margin-bottom: $tablet-small-sections-space;
+        }
+
+        &__title {
+            margin-bottom: 0;
         }
 
         &__credentials {
@@ -273,14 +275,15 @@
 
         &__img-frame {
             order: 1;
+            height: auto;
             width: 45%;
             max-width: 350px;
-            height: auto;
-            margin-top: -3.7rem;
+            margin-top: -48px;
         }
 
         &__bio {
             font-size: 1.2rem;
+            margin-bottom: $tablet-small-sections-space;
         }
 
         &__bio-text {
@@ -288,7 +291,7 @@
         }
 
         &__subtitle {
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             font-size: 2rem;
         }
 
@@ -304,7 +307,7 @@
 
         &__tool {
             font-size: 1.5rem;
-            margin-bottom: 1.5rem;
+            margin-top: 2rem;
         }
     }
 
@@ -325,10 +328,7 @@
 
         &__title {
             width: 100%;
-        }
-
-        &__layout{
-            padding: 1.5rem 0;
+            margin-bottom: $tablet-small-sections-space;
         }
 
         &__wrapper {
@@ -376,7 +376,8 @@
         }
 
         &__skills {
-            width: 100%;
+            width: 90%;
+            margin-bottom: $tablet-small-sections-space;
         }
 
         &__skills-item {
@@ -397,6 +398,7 @@
 
         &__tool {
             position: relative;
+            margin-top: 0;
             padding-right: 35px;
             padding-left: 0;
 

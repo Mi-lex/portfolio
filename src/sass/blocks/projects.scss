@@ -1,12 +1,12 @@
 .projects {
     @include section-divider;
 
-    width: 100%;
-    padding-bottom: 0.5rem;
     background: #b993d6 linear-gradient(to right, #b993d6, #8ca6db);
 
     &__wrapper {
         @include wrapper;
+        padding: $mobile-big-section-indent 0;
+        padding-bottom: $mobile-big-section-indent - 16px; // project margin-bottom = 20px
     }
 
     &__list {
@@ -21,16 +21,14 @@
 
 @media (min-width: $tablet-width) {
     .projects {
-        padding: 1rem 0;
+        &__wrapper {
+            padding: $tablet-big-section-indent 0;
+            padding-bottom: $tablet-big-section-indent - 32px;
+        }
+
         &__list {
             flex-direction: row;
             flex-wrap: wrap;
         }
-    }
-}
-
-@media (min-width: $desktop-width) {
-    .projects {
-        padding: 1.5rem 0;
     }
 }
