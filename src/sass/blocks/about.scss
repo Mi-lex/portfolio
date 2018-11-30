@@ -1,6 +1,5 @@
 .about {
     width: 100%;
-    min-height: 100vh;
 
     @include page-section-background(
         'mountain-mobile(360)@1x.jpg',
@@ -12,7 +11,7 @@
         'mountain-desktop(1920)@1x.jpg',
     );
 
-    &__wrapper {
+    &__layout{
         @include section-divider;
         width: 100%;
         padding: 0;
@@ -20,33 +19,33 @@
         @include main-tone-bg(0.5);
     }
 
-    &__content {
+    &__wrapper {
         @include wrapper;
     }
 
-    &__upper-subcontent {
+    &__initial {
         display: flex;
-        flex-direction: column;
-        width: 100%;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
     }
 
     &__img-frame {
         position: relative;
-        width: 50vw;
-        height: 50vw;
 
-        @media (orientation: landscape) {
-            width: 40vh;
-            height: 40vh;
-        }
-
-        margin: 0;
-        margin-bottom: 0.5rem;
-        padding: 0;
         align-self: center;
-        @include main-gradient(to right);
-        border-radius: 50%;
+
+        width: 55%;
+        max-width: 200px;
+        margin: 0;
+        padding: 0;
+
+        border-radius: 8px;
+        background: linear-gradient(to bottom, #77A1D3, #79CBCA);
+
+        &::after {
+            display: block;
+            content: "";
+            padding-top: 100%;
+        }
     }
 
     &__img {
@@ -57,36 +56,123 @@
         width: 95%;
         height: 95%;
         transform: translate(-50%, -50%);
+    }
 
-        border-radius: 50%;
+    &__credentials {
+        display: flex;
+        width: 45%;
+        max-width: 200px;
+        padding-left: 0.5rem;
+
+        tbody {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            width: 1px;
+            padding-top: 100%;
+        }
+    }
+
+    &__field {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__field-name {
+        font-style: italic;
+        color: #79CBCA;
+    }
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
 
     &__bio {
+        width: 100%;
         text-align: justify;
     }
 
     &__bio-text {
         margin: 0;
+        margin-bottom: 1rem;
+        text-indent: 1.5em;
     }
 
-    &__skills-heading {
-        margin-top: 0;
-        margin-bottom: 0.8rem;
-        padding-left: 0.1rem;
-        font-size: 1.8rem;
-        text-transform: uppercase;
+    &__subtitle {
+        margin: 0;
+        margin-bottom: 0.5rem;
+
+        font-size: 1.3rem;
+        font-style: italic;
+        font-weight: normal;
+        color: #77A1D3;
+    }
+
+    &__devtools {
+        width: 160px;
+    }
+
+    &__tool-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__tool {
+        position: relative;
+
+        margin-bottom: 15px;
+        padding-left: 12%;
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            left: 0;
+
+            content: '';
+            display: block;
+            width: 10%;
+            height: 1px;
+            transform: translateY(-50%);
+
+            @include main-gradient(to right);
+        }
+    }
+
+    &__tool-icon {
+        display: none;
+    }
+
+    &__bio-skill {
+        font-weight: 700;
+    }
+
+    &__bio--principle {
+        font-style: italic;
     }
 
     &__skills {
+        width: calc(100% - 165px);
+    }
+
+    &__skill-list {
         display: flex;
         flex-flow: wrap;
         flex-direction: row;
         justify-content: space-around;
+
         @include custom-list;
     }
 
     &__skills-name {
-        display: block;
+        display: none;
         height: 20%;
         min-height: 2rem;
 
@@ -98,61 +184,102 @@
     }
 
     &__skills-icon {
+        position: absolute;
+        top: 0;
         display: block;
         width: 100%;
-        height: 70%;
+        height: 100%;
         margin: 0 auto;
-        padding: 0;
+
         border-radius: 20%;
     }
 }
 
 .about__skills-item {
     position: relative;
-    width: calc(100vw / 4);
-    height: calc(100vw / 4);
+    width: calc(100% / 4);
+    max-width: 55px;
+    margin: 5px 2%;
 
     @media (orientation: landscape) {
-        width: calc(100vw / 7);
-        height: calc(100vw / 7); 
+        width: calc(100% / 7);
+        max-width: 95px;
     }
 
-    margin-bottom: 0.5rem;
     font-style: italic;
     text-align: center;
+
+    &::before {
+        content: '';
+
+        display: block;
+        padding-top: 100%;
+    }
 }
 
 @media (min-width: $tablet-width) {
     .about {
         min-height: auto;
 
-        &__wrapper {
+        &__layout {
             padding: 1rem 0;
             min-height: auto;
         }
 
-        &__upper-subcontent {
-            flex-direction: row;
+        &__initial {
             justify-content: space-between;
-            align-items: center;
+        }
 
-            margin-bottom: 1.5rem;
+        &__credentials {
+            max-width: 100%;
+            width: 50%;
+            padding-left: 0;
+            align-self: flex-end;
+
+            font-size: 1.5rem;
+            line-height: 3rem;
+            order: 0;
+
+            &::after {
+                display: none;
+            }
+
+            tbody {
+                width: 100%;
+            }
+        }
+
+        &__field {
+            position: relative;
+            flex-direction: row;
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                    
+                display: block;
+                height: 1px;
+                width: 100%;
+
+                @include main-gradient(to right);
+            }
+        }
+
+        &__field-name {
+            width: 40%;
         }
 
         &__img-frame {
-            width: 40%;
+            order: 1;
+            width: 45%;
+            max-width: 350px;
             height: auto;
-            margin-bottom: 0;
-        }
-
-        &__img-frame::after {
-            display: block;
-            content: "";
-            padding-top: 100%;
+            margin-top: -3.7rem;
         }
 
         &__bio {
-            width: 55%;
             font-size: 1.2rem;
         }
 
@@ -160,71 +287,29 @@
             font-size: 1.5rem;
         }
 
-        &__skills-heading {
-            margin-bottom: 1rem;
+        &__subtitle {
+            margin-bottom: 30px;
             font-size: 2rem;
-            letter-spacing: 0.1rem;
         }
 
-        &__skills-icon {
-            width: 80%;
+        &__devtools {
+            order: 1;
+            width: 250px;
+        }
+
+        &__skills {
+            width: 45%;
+            order: 0;
+        }
+
+        &__tool {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
         }
     }
 
     .about__skills-item {
-        position: relative;
-        width: calc(100vw / 7);
-        height: calc(100vw / 7);
-        margin-bottom: 1rem;
-        text-align: center;
-    
-        &::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            display: block;
-            width: 70%;
-            height: 1px;
-            transform: translateX(-50%);
-    
-            background-color: #f7797d;
-        }
-    
-        &--html5::after {
-            background-color: rgb(228, 77, 38);
-        }
-        &--css3::after {
-            background-color: rgb(32, 98, 175);
-        }
-    
-        &--js::after {
-            background-color: rgb(212, 184, 48);
-        }
-    
-        &--sass::after {
-            background-color: #CF649A;
-        }
-    
-        &--php7::after {
-            background-color: rgb(137, 147, 190);
-        }
-        
-        &--bem::after {
-            background-color: black;
-        }
-    
-        &--es6::after {
-            background-color: rgb(242, 101, 34);
-        }
-    
-        &--ts::after {
-            background-color: rgb(0, 122, 204);
-        }
-    
-        &--laravel::after {
-            background-color: #F35045;
-        }
+        max-width: 90px;
     }
 }
 
@@ -238,22 +323,98 @@
             background-color: transparent;
         }
 
-        &__wrapper {
+        &__title {
+            width: 100%;
+        }
+
+        &__layout{
             padding: 1.5rem 0;
         }
 
-        &__img-frame {
-            width: 25%;
+        &__wrapper {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
         }
 
-        &__bio {
+        &__initial {
+            width: 25%;
+            flex-direction: column;
+            align-self: flex-start;
+        }
+
+        &__field {
+            padding-left: 5px;
+        }
+
+        &__img-frame {
+            width: 100%;
+            margin-top: 0;
+            margin-bottom: 15px;
+            order: 0;
+        }
+
+        &__credentials {
+            width: 100%;
+            font-size: 1.2rem;
+            line-height: 2.4rem;
+            order: 1;
+        }
+
+        &__field-name {
+            width: 45%;
+        }
+
+        &__content {
             width: 70%;
         }
 
-        &__skills-item {
-            width: 180px;
-            height: 130px;
+        &__subtitle {
+            margin-bottom: 20px;
+            font-size: 1.7rem;
         }
 
+        &__skills {
+            width: 100%;
+        }
+
+        &__skills-item {
+            width: 60px;
+            height: 60px;
+            margin-left: 0;
+            margin-right: 70px;
+        }
+
+        &__devtools {
+            width: 100%;
+        }
+
+        &__tool-list {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__tool {
+            position: relative;
+            padding-right: 35px;
+            padding-left: 0;
+
+            &::before {
+                display: none;
+            }
+        }
+
+        &__tool-icon {
+            position: absolute;
+            top: 50%;
+            right: 0;
+
+            display: inline-block;
+            width: 26px;
+            height: 26px;
+
+            transform: translateY(-50%);
+        }
     }
 }

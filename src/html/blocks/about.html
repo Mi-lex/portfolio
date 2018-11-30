@@ -1,10 +1,10 @@
 <article class="about">
-    <div class="about__wrapper" id="about">
-        <section class="about__content">
+    <div class="about__layout" id="about">
+        <div class="about__wrapper">
             <h2 class="about__title section-title">
                 About me
             </h2>
-            <div class="about__upper-subcontent">
+            <section class="about__initial">
                 <figure class="about__img-frame">
                     <picture>
                         <source media="(min-width: 1150px)"
@@ -23,105 +23,139 @@
                                         ./img/me-tablet@2x.jpg 2x">
                         <img src="./../../img/me-mobile@1x.jpg" srcset="./img/me-mobile@2x.jpg 2x" 
                             role="img" alt="picture of Alexey" style="width: 95%; height: 95%" class="about__img">
-                </picture>
+                    </picture>
                 </figure>
+                <table class="about__credentials">
+                    <tr class="about__field">
+                        <td class="about__field-name">
+                            Name:
+                        </td>
+                        <td class="about__field-value">
+                            Mishin Alexey
+                        </td>
+                    </tr>
+                    <tr class="about__field">
+                        <td class="about__field-name">
+                            Age:
+                        </td>
+                        <td class="about__field-value">
+                            22 y.o
+                        </td>
+                    </tr>
+                    <tr class="about__field">
+                        <td class="about__field-name">
+                            Languages:
+                        </td>
+                        <td class="about__field-value">
+                            Russian, English
+                        </td>
+                    </tr>
+                    <tr class="about__field">
+                        <td class="about__field-name">
+                            Education:
+                        </td>
+                        <td class="about__field-value">
+                            University
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section class="about__content">
                 <section class="about__bio">
                     <p class="about__bio-text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem molestias aperiam
-                        architecto rerum accusamus error
-                        doloremque corrupti odio eum harum et corporis, aut molestiae debitis maiores ipsum
-                        fugiat ipsam fuga culpa id, eius
-                        laboriosam obcaecati.
+                        Web-developer that works with <span class="about__bio-skill">HTML</span>, 
+                        <span class="about__bio-skill">CSS/SCSS</span>, <span class="about__bio-skill">JavaScript/React</span>. 
+                        In development I am guided mostly by <span class="about__bio--principle">mobile-first design</span>, 
+                        <span class="about__bio--principle">semantic markup</span> and 
+                        <span class="about__bio--principle">graceful degradation</span>. I like experimenting with web 
+                        technologies and I do care about user experience. Also, I'm familiar  with 
+                        <span class="about__bio-skill">PHP/Laravel</span> and <span class="about__bio-skill">MySQL</span>.
                     </p>
                 </section>
-            </div>
-            <div class="about__lower-subcontent">
-                <h3 class="about__skills-heading">
-                    Familiar words:
-                </h3>
-                <ul class="about__skills">
-                    <li class="about__skills-item about__skills-item--html5">
-                        <div class="about__skills-icon">
-                            <svg style="width: 100%; height: 100%;">
+                <section class="about__devtools">
+                    <h3 class="about__subtitle">
+                        Dev tools:
+                    </h3>
+                    <ul class="about__tool-list">
+                        <li class="about__tool">
+                            Visual Studio Code
+                            <svg class="about__tool-icon">
+                                <use xlink:href="./img/sprite.svg#vscode"></use>
+                            </svg>
+                        </li>
+                        <li class="about__tool">
+                            Git
+                            <svg class="about__tool-icon">
+                                <use xlink:href="./img/sprite.svg#git"></use>
+                            </svg>
+                        </li>
+                        <li class="about__tool">
+                            Adobe XD
+                            <svg class="about__tool-icon">
+                                <use xlink:href="./img/sprite.svg#adobexd"></use>
+                            </svg>
+                        </li>
+                        <li class="about__tool">
+                            Vagrant
+                            <svg class="about__tool-icon">
+                                <use xlink:href="./img/sprite.svg#vagrant"></use>
+                            </svg>
+                        </li>
+                    </ul>
+                </section>
+                <section class="about__skills">
+                    <h3 class="about__subtitle">
+                        Tech skills:
+                    </h3>
+                    <ul class="about__skill-list">
+                        <li class="about__skills-item">
+                            <svg class="about__skills-icon" style="width: 100%; height: 100%;">
                                 <use xlink:href="./img/sprite.svg#html-5"></use>
                             </svg>
-                        </div>
-                        <strong class="about__skills-name">
-                            HTML5
-                        </strong>
-                    </li>
-                    <li class="about__skills-item about__skills-item--css3">
-                        <div class="about__skills-icon">
-                            <svg style="width: 100%; height: 100%;">
+                        </li>
+                        <li class="about__skills-item">
+                            <svg class="about__skills-icon" style="width: 100%; height: 100%;">
                                 <use xlink:href="./img/sprite.svg#css3"></use>
                             </svg>
-                        </div>
-                        <strong class="about__skills-name">
-                            CSS3
-                        </strong>
-                    </li>
-                    <li class="about__skills-item about__skills-item--js">
-                        <div class="about__skills-icon">
-                            <svg style="width: 100%; height: 100%;">
+                        </li>
+                        <li class="about__skills-item">
+                            <svg class="about__skills-icon" style="width: 100%; height: 100%;">
                                 <use xlink:href="./img/sprite.svg#javascript"></use>
                             </svg>
-                        </div>
-                        <strong class="about__skills-name">
-                            JS
-                        </strong>
-                    </li>
-                    <li class="about__skills-item about__skills-item--php7">
-                        <div class="about__skills-icon">
-                            <svg style="width: 100%; height: 100%;">
+                        </li>
+                        <li class="about__skills-item">
+                            <svg class="about__skills-icon" style="width: 100%; height: 100%;">
                                 <use xlink:href="./img/sprite.svg#php"></use>
                             </svg>
-                        </div>
-                        <strong class="about__skills-name">
-                            PHP-7
-                        </strong>
-                    </li>
-                    <li class="about__skills-item about__skills-item-sass">
-                        <div class="about__skills-icon">
-                            <svg style="width: 100%; height: 100%;">
+                        </li>
+                        <li class="about__skills-item">
+                            <svg class="about__skills-icon" style="width: 100%; height: 100%;">
                                 <use xlink:href="./img/sprite.svg#sass"></use>
                             </svg>
-                        </div>
-                        <strong class="about__skills-name">
-                            Sass
-                        </strong>
-                    </li>
-                    <li class="about__skills-item about__skills-item--bem">
-                        <div class="about__skills-icon">
-                            <svg style="width: 100%; height: 100%;">
+                        </li>
+                        <li class="about__skills-item">
+                            <svg class="about__skills-icon" style="width: 100%; height: 100%;">
                                 <use xlink:href="./img/sprite.svg#bem"></use>
                             </svg>
-                        </div>
-                        <strong class="about__skills-name">
-                            BEM
-                        </strong>
-                    </li>
-                    <li class="about__skills-item about__skills-item--es6">
-                        <div class="about__skills-icon">
-                            <svg style="width: 100%; height: 100%;">
+                        </li>
+                        <li class="about__skills-item">
+                            <svg class="about__skills-icon" style="width: 100%; height: 100%;">
                                 <use xlink:href="./img/sprite.svg#es6"></use>
                             </svg>
-                        </div>
-                        <strong class="about__skills-name">
-                            ES6
-                        </strong>
-                    </li>
-                    <li class="about__skills-item about__skills-item--laravel">
-                        <div class="about__skills-icon">
-                            <svg style="width: 100%; height: 100%;">
+                        </li>
+                        <li class="about__skills-item">
+                            <svg class="about__skills-icon" style="width: 100%; height: 100%;">
                                 <use xlink:href="./img/sprite.svg#laravel"></use>
                             </svg>
-                        </div>
-                        <strong class="about__skills-name">
-                            Laravel
-                        </strong>
-                    </li>
-                </ul>
-            </div>
-        </section>
+                        </li>
+                        <li class="about__skills-item">
+                            <svg class="about__skills-icon" style="width: 100%; height: 100%;">
+                                <use xlink:href="./img/sprite.svg#mysql"></use>
+                            </svg>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+        </div>
     </div>
 </article>
