@@ -53,8 +53,8 @@
             left: 0px;
     
             display: block;
-            width: 42px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
             border-radius: 40%;
     
             transform: scale(0.1);
@@ -66,14 +66,14 @@
         }
     
         &__item:hover::before {
-            top: 2px;
+            top: 0;
             opacity: 1;
             transform: scale(1);
         }
 
         &__icon {
-            width: 42.5px;
-            height: 42.5px;
+            width: 35px;
+            height: 35px;
         }
 
         &__link:focus {

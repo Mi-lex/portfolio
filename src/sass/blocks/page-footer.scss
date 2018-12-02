@@ -4,9 +4,4 @@
     padding-bottom: 0.5rem;
 
     @include section-divider;
-
-    @media (min-width: $tablet-width) {
-        padding-top: 1.1rem;
-        padding-bottom: 1rem;
-    }
 }

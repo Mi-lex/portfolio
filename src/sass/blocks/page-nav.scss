@@ -163,6 +163,7 @@
         width: 80vw;
         max-width: $desktop-wrapper-width;
         margin: 0 auto;
+        font-size: 20px;
 
         &::before {
             display: none;
@@ -181,7 +182,6 @@
 
         &__list {
             flex-direction: row;
-            justify-content: default;
             min-height: auto;
             width: 100%;
             height: 45px;
