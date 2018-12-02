@@ -4,10 +4,20 @@
     $font-color: white;
     $font-light-color: #e9e4f6;
     $primary-color: white;
-    $secondary-color: black; // borders, underlines, X icon when inputs are focused
-
+    $secondary-color: #79CBCA; // borders, underlines, X icon when inputs are focused
+    
     @include section-divider;
+    @include page-section-background(
+        'sea-mobile(360)@1x.jpg',
+        'sea-mobile(360)@2x.jpg',
+        'sea-tablet(768)@1x.jpg',
+        'sea-tablet(768)@2x.jpg',
+        'sea-desktop(1440)@1x.jpg',
+        'sea-desktop(1440)@2x.jpg',
+        'sea-desktop(1920)@1x.jpg',
+    );
 
+    position: relative;
     width: 100%;
 
     background: #6A8BCE linear-gradient(to right, #6A8BCE, #BD95DC);
@@ -15,9 +25,24 @@
 
     font-size: $mobile-font-size;
 
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: rgba(16, 18, 22, 0.6);
+        z-index: 0;
+    }
+
     &__wrapper {
+        position: relative;
         @include wrapper;
         padding: $mobile-big-section-indent 0;
+        z-index: 1;
     }
 
     &__info {
@@ -41,10 +66,9 @@
     &__info-field {
         position: relative;
 
-        display: block;
+        display: inline-block;
         width: 100%;
-        max-width: 380px;
-        height: 3rem;
+        max-width: 375px;
         padding-left: 1rem;
         padding-right: 45px;
         
@@ -52,11 +76,18 @@
         font-weight: normal;
         line-height: 3rem;
 
-        border: 1px solid $primary-color;
-    }
+        &::after {
+            content: '';
 
-    &__info-field:not(:last-of-type) {
-        border-bottom: none;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+
+            display: block;
+            width: 100%;
+            height: 1px;
+            @include main-gradient(to right);
+        }
     }
 
     &__info-icon {
@@ -65,10 +96,10 @@
         right: 0.5rem;
 
         display: block;
-        width: 35px;
-        height: 35px;
+        width: 30px;
+        height: 30px;
         transform: translateY(-50%);
-        fill: $primary-color;
+        fill: $secondary-color;
     }   
 
     &__heading {
@@ -210,7 +241,6 @@
         }
     }
 
-    
     &__input--filled + &__label,
     &__message:focus + &__label,
     &__input:focus + &__label {
@@ -243,7 +273,7 @@
 
 @media (min-width: $tablet-width) {
     .contact {
-        $tablet-font-size: 1.6rem;
+        $tablet-font-size: 1.5rem;
         $tablet-font-size-small: 1rem;
 
         font-size: $tablet-font-size;
@@ -260,25 +290,20 @@
         &__info {
             display: flex;
             flex-wrap: wrap;
+            justify-content: space-between;
             margin-bottom: $tablet-small-sections-space;
         }
 
         &__info-field {
-            width: 50%;
-            height: 4rem;
+            width: 48%;
             max-width: 420px;
 
             line-height: 4rem;
         }
 
-        &__info-field:not(:last-of-type) {
-            border-bottom: 1px solid white;
-            border-right: none;
-        }
-
         &__info-icon {
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
         }
 
         &__form-container {
@@ -324,9 +349,61 @@
 }
 
 @media (min-width: $desktop-width) {
+    $desktop-font-size: 1.2rem;
+    $desktop-font-size-small: 0.8rem;
+
+
     .contact {
-        padding: 1.5rem 0;
-        padding-bottom: 2.5rem;
+        font-size: $desktop-font-size;
+
+        &__wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        &__title {
+            width: 100%;
+        }
+
+        &__info {
+            flex-direction: column;
+            width: 25%;
+        }
+
+        &__info-field {
+            width: 100%;
+            padding-left: 60px;
+            padding-right: 0;
+
+            line-height: 3.4rem;
+        }
+
+        &__info-icon {
+            left: 5px;
+            width: 30px;
+            height: 30px;
+        }
+
+        &__form {
+            width: 70%;
+        }
+
+        &__field--half {
+            width: 42%;
+        }
+
+        &__clear-field {
+            height: 1.2rem;
+            width: 1.2rem;
+        }
+
+        &__input--filled + &__label,
+        &__message:focus + &__label,
+        &__input:focus + &__label {
+            font-size: $desktop-font-size-small;
+        }
 
         &__input:hover,
         &__message:hover {
@@ -347,6 +424,8 @@
         }
 
         &__send {
+            width: 200px;
+            height: 50px;
             @include ease-out(0.3s);
         }
 
