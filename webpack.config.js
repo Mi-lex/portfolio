@@ -44,7 +44,6 @@ const config = {
                         }
                     }
                 ]
-                
             },
             {
                 test: /\.css$/,
@@ -123,6 +122,42 @@ const config = {
 module.exports = (env, argv) => {
 
     if (argv.mode === 'production') {
+        /**
+         * Change rule for images
+         * this is not the best approach
+         * just don't want make another
+         * config due to only one rule
+         */
+        const indexOfImgRules = 6;
+
+        config.module.rules[6] = {
+            test: /\.(png|jpe?g|gif|webp)$/,
+            loaders: [
+                {
+                    loader: 'file-loader',
+                    options: {
+                        name: './img/[name].[ext]'
+                    }
+                },
+                {
+                    loader: 'image-webpack-loader',
+                    options: {
+                      mozjpeg: {
+                        progressive: true,
+                        quality: 80
+                      },
+                      optipng: {
+                        enabled: false,
+                      },
+                      pngquant: {
+                        quality: '80-90',
+                        speed: 2
+                      },
+                    }
+                  },
+            ],
+        }
+
         // Plagins
         config.plugins.unshift(
             new CleanWebpackPlugin(['build'],
