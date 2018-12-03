@@ -62,18 +62,20 @@
         max-width: 200px;
         padding-left: 0.5rem;
 
-        tbody {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
         &::after {
             content: '';
             display: block;
             width: 1px;
             padding-top: 100%;
         }
+    }
+
+    &__credential-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 0;
+        padding: 0;
     }
 
     &__field {
@@ -245,10 +247,10 @@
             &::after {
                 display: none;
             }
+        }
 
-            tbody {
-                width: 100%;
-            }
+        &__credential-list {
+            width: 100%;
         }
 
         &__field {
