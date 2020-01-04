@@ -241,7 +241,6 @@
             align-self: flex-end;
 
             font-size: 1.5rem;
-            line-height: 3rem;
             order: 0;
 
             &::after {
@@ -256,7 +255,8 @@
         &__field {
             position: relative;
             flex-direction: row;
-
+            padding-top: 0.6rem;
+            padding-bottom: 0.6rem;
             &::after {
                 content: '';
                 position: absolute;
@@ -360,7 +360,6 @@
         &__credentials {
             width: 100%;
             font-size: 1.2rem;
-            line-height: 2.4rem;
             order: 1;
         }
 
