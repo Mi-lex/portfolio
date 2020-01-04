@@ -1,5 +1,5 @@
 {
-  "name": "Portfolio",
+  "name": "portfolio",
   "version": "1.0.0",
   "description": "",
   "main": "index.html",
@@ -27,7 +27,7 @@
     "html-webpack-plugin": "^3.2.0",
     "image-webpack-loader": "^4.5.0",
     "img-loader": "^3.0.1",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.0",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.7.0",
     "sass-loader": "^7.1.0",
