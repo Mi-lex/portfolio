@@ -6,6 +6,8 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const BUILD_FOLDER = 'docs'
+
 const config = {
     entry: {
         app: [
@@ -15,7 +17,7 @@ const config = {
     },
 
     output: {
-        path: path.resolve(__dirname, './build'),
+        path: path.resolve(__dirname, `./${BUILD_FOLDER}`),
         filename: '[name].js'
     },
 
@@ -160,7 +162,7 @@ module.exports = (env, argv) => {
 
         // Plagins
         config.plugins.unshift(
-            new CleanWebpackPlugin(['build'],
+            new CleanWebpackPlugin([BUILD_FOLDER],
                 {
                     root: __dirname,
                     verbose: true,
