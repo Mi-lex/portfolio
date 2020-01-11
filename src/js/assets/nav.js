@@ -1,22 +1,18 @@
-import {debounce} from './utilities';
+import { debounce, easeIn } from './utilities';
 
 export default function nav() {
-    const navigation = document.querySelector('.page-nav');
-    const tabletWidth = 768;
-    const headerHeight = (window.innerWidth > tabletWidth) ? document.querySelector('.page-header').offsetHeight : 0;
+    const PAGE_HEADER = `page-header`;
+    const PAGE_NAV = `page-nav`;
+    const NAV_ITEM = `page-nav__item`;
+    const NAV_ITEM_ACTIVE = `page-nav__item--active`;
+    const NAV_LINK = `page-nav__link`;
+    
+    const TABLET_WIDTH = 768;
+    const NAV_ACTION_DELAY = 30;
 
-    const easeOut = (currentTime, startValue, valueChange, duration) => {
-        currentTime /= startValue;
-        currentTime--;
-        return valueChange * (Math.pow(currentTime, 3) + 1) + duration;
-    };
-
-    const easeIn = (t, b, c, d) => {
-        t /= d / 2;
-        if (t < 1) return c / 2 * t * t + b;
-        t--;
-        return -c / 2 * (t * (t - 2) - 1) + b;
-    };
+    const navigation = document.querySelector(`.${PAGE_NAV}`);
+    const headerHeight = (window.innerWidth > TABLET_WIDTH) ? document.querySelector(`.${PAGE_HEADER}`).offsetHeight : 0;
+    const heightGap = (window.innerWidth > TABLET_WIDTH) ? 10 : 2;
 
     const scrollTo = (target, duration) => {
         const currentPosition = window.pageYOffset;
@@ -44,7 +40,7 @@ export default function nav() {
     const scrollTime = 900;
 
     const navHandler = e => {
-        let link = e.target.closest('.page-nav__link');
+        let link = e.target.closest(`.${NAV_LINK}`);
 
         if (!link || !window.requestAnimationFrame) {
             return;
@@ -55,31 +51,50 @@ export default function nav() {
         scrollTo(document.querySelector(link.hash), scrollTime);
     }
 
-    navigation.addEventListener('click', navHandler);
+    navigation.addEventListener(`click`, navHandler);
 
-    const navLinks = document.querySelectorAll('.page-nav__link');
+    const navLinks = document.querySelectorAll(`.${NAV_LINK}`);
 
-
+    const userReachedTheBottom = (fromTop) => {
+        const scrollHeight = Math.max(
+            document.body.scrollHeight, document.documentElement.scrollHeight,
+            document.body.offsetHeight, document.documentElement.offsetHeight,
+            document.body.clientHeight, document.documentElement.clientHeight
+        );
+        
+        return (Math.abs(scrollHeight - fromTop) - window.innerHeight) < 1
+    }
 
     const scrollPagaHanlder = (e) => {
         const fromTop = window.pageYOffset;
 
-        Array.from(navLinks).forEach(link => {
+        const navLinksArr = Array.from(navLinks)
+
+        // user gets bottom of the page
+        if (userReachedTheBottom(fromTop)) {
+            document.querySelector(`.${NAV_ITEM_ACTIVE}`)
+                .classList.remove(NAV_ITEM_ACTIVE);
+            
+            navLinksArr[navLinksArr.length - 1].closest(`.${NAV_ITEM}`).classList.add(NAV_ITEM_ACTIVE);
+            return;
+        }
+
+        navLinksArr.forEach(link => {
             const section = document.querySelector(link.hash);
 
             if (
-                section.offsetTop - headerHeight - 10 <= fromTop &&
-                section.offsetTop + section.offsetHeight - headerHeight - 10 > fromTop
+                section.offsetTop - headerHeight - heightGap <= fromTop &&
+                section.offsetTop + section.offsetHeight - headerHeight - heightGap > fromTop
             ) {
-                if (link.closest('.page-nav__item--active')) {
+                if (link.closest(`.${NAV_ITEM_ACTIVE}`)) {
                     return;
                 }
 
                 debounce.start(() => {
-                    document.querySelector('.page-nav__item--active')
-                        .classList.remove('page-nav__item--active');
-                    link.closest('.page-nav__item').classList.add('page-nav__item--active');
-                }, 80);
+                    document.querySelector(`.${NAV_ITEM_ACTIVE}`)
+                        .classList.remove(NAV_ITEM_ACTIVE);
+                    link.closest(`.${NAV_ITEM}`).classList.add(NAV_ITEM_ACTIVE);
+                }, NAV_ACTION_DELAY);
             }
         });
     }
