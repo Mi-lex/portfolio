@@ -13,5 +13,6 @@ import './../../img/projects/technomart.webp';
 import './../../img/projects/mishka.webp';
 import './../../img/projects/keksobooking.webp';
 import './../../img/projects/pixelhunter.webp';
+import './../../img/projects/spt941.webp';
 
 import './../../favicon.ico';
