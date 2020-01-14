@@ -16,12 +16,12 @@
                                 srcset="./img/me-tablet@1x.webp 1x,
                                         ./img/me-tablet@2x.webp 2x">
                         <source media="(min-width: 1150px)" 
-                                srcset="./img/me-desktop@1x.jpg 1x,
-                                        ./img/me-desktop@2x.jpg 2x">
+                                srcset="${require(`../../img/me-desktop@1x.jpg`)} 1x,
+                                        ${require(`../../img/me-desktop@2x.jpg`)} 2x">
                         <source media="(min-width: 768px)"
-                                srcset="./img/me-tablet@1x.jpg 1x,
-                                        ./img/me-tablet@2x.jpg 2x">
-                        <img src="./../../img/me-mobile@1x.jpg" srcset="./img/me-mobile@2x.jpg 2x" 
+                                srcset="${require(`../../img/me-tablet@1x.jpg`)} 1x,
+                                        ${require(`../../img/me-tablet@2x.jpg`)} 2x">
+                        <img src="../../img/me-mobile@1x.jpg" srcset="${require(`../../img/me-mobile@2x.jpg`)} 2x" 
                             role="img" alt="picture of Alexey" style="width: 95%; height: 95%" class="about__img">
                     </picture>
                 </figure>

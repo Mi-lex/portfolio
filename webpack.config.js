@@ -5,6 +5,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ImageminWebpWebpackPlugin = require("imagemin-webp-webpack-plugin");
 
 const BUILD_FOLDER = 'docs'
 
@@ -25,7 +26,10 @@ const config = {
         rules: [
             { 
                 test: /\.html$/, 
-                loader: 'html-loader'
+                loader: 'html-loader',
+                options: {
+                    interpolate: true
+                }
             },
             {
                 test: /\.js$/,
@@ -73,7 +77,7 @@ const config = {
                 }
             },
             {
-                test: /\.(png|jpe?g|gif|webp)$/,
+                test: /\.(png|jpe?g|gif|ico)$/,
                 loaders: [
                     {
                         loader: 'file-loader',
@@ -81,16 +85,7 @@ const config = {
                             name: './img/[name].[ext]'
                         }
                     },
-
-                    'img-loader'
                 ],
-            },
-            {
-                test: /\.(ico)$/,
-                loader: 'file-loader',
-                options: {
-                    name: './[name].[ext]'
-                }
             },
             {
                 test: /\.svg$/,
@@ -111,6 +106,19 @@ const config = {
     plugins: [
         new ExtractTextPlugin("[name].css"),
         new SpriteLoaderPlugin(),
+        new ImageminWebpWebpackPlugin({
+            config: [{
+                // exclude backgrounds images
+                test: /^(?:(?!bg-).)*\.(png|jpe?g)$/,
+                options: {
+                    quality:  80
+                }
+            }],
+            overrideExtension: true,
+            detailedLogs: false,
+            silent: false,
+            strict: true
+        }),
         new HtmlWebpackPlugin({
             template: './src/html/main.html.js'
         }),
@@ -130,10 +138,11 @@ module.exports = (env, argv) => {
          * just don't want make another
          * config due to only one rule
          */
-        const indexOfImgRules = 6;
+        // the index of imgs rule is one that before last
+        const indexOfImgRules = config.module.rules.length - 2;
 
-        config.module.rules[6] = {
-            test: /\.(png|jpe?g|gif|webp)$/,
+        config.module.rules[indexOfImgRules] = {
+            test: /\.(png|jpe?g|gif|ico)$/,
             loaders: [
                 {
                     loader: 'file-loader',
