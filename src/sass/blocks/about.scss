@@ -96,7 +96,6 @@
 
     &__bio {
         width: 100%;
-        text-align: justify;
         margin-bottom: $mobile-small-sections-space;
     }
 
@@ -369,6 +368,10 @@
 
         &__content {
             width: 70%;
+        }
+
+        &__bio-text {
+            font-size: inherit;
         }
 
         &__subtitle {
