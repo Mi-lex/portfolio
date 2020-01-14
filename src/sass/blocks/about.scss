@@ -2,13 +2,13 @@
     width: 100%;
 
     @include page-section-background(
-        'mountain-mobile(360)@1x.jpg',
-        'mountain-mobile(360)@2x.jpg',
-        'mountain-tablet(768)@1x.jpg',
-        'mountain-tablet(768)@2x.jpg',
-        'mountain-desktop(1440)@1x.jpg',
-        'mountain-desktop(1440)@2x.jpg',
-        'mountain-desktop(1920)@1x.jpg',
+        'bg-mountain-mobile(360)@1x.jpg',
+        'bg-mountain-mobile(360)@2x.jpg',
+        'bg-mountain-tablet(768)@1x.jpg',
+        'bg-mountain-tablet(768)@2x.jpg',
+        'bg-mountain-desktop(1440)@1x.jpg',
+        'bg-mountain-desktop(1440)@2x.jpg',
+        'bg-mountain-desktop(1920)@1x.jpg',
     );
 
     &__layout{

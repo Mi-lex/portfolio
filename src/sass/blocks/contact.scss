@@ -8,13 +8,13 @@
     
     @include section-divider;
     @include page-section-background(
-        'sea-mobile(360)@1x.jpg',
-        'sea-mobile(360)@2x.jpg',
-        'sea-tablet(768)@1x.jpg',
-        'sea-tablet(768)@2x.jpg',
-        'sea-desktop(1440)@1x.jpg',
-        'sea-desktop(1440)@2x.jpg',
-        'sea-desktop(1920)@1x.jpg',
+        'bg-sea-mobile(360)@1x.jpg',
+        'bg-sea-mobile(360)@2x.jpg',
+        'bg-sea-tablet(768)@1x.jpg',
+        'bg-sea-tablet(768)@2x.jpg',
+        'bg-sea-desktop(1440)@1x.jpg',
+        'bg-sea-desktop(1440)@2x.jpg',
+        'bg-sea-desktop(1920)@1x.jpg',
     );
 
     position: relative;
