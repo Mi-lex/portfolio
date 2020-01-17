@@ -5,17 +5,32 @@ import projects from './blocks/projects.html';
 import contact from './blocks/contact.html';
 import pageFooter from './blocks/page-footer.html';
 
+const title = `Milex`;
+const description = `Here you can find the list and brief descriptions of the projects I have recently completed.`;
+const keyWords = [
+	'developer',
+	'web developer',
+	'fullstack',
+	'frontend',
+	'backend',
+	'javascript developer',
+	'Milex',
+	'Mishin Alexey',
+];
+const author = `Mishin Alexey`;
 
-export default function (templateParams) {
-  const html = 
-    `<html>
+
+export default function() {
+	const html = `<html>
         <head>
           <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,  shrink-to-fit=no">
           <meta http-equiv="X-UA-Compatible" content="ie=edge">
-          <title>Portfolio</title>
-          <meta name="description" content="Mishin Alexey portfolio">
-          <link rel="icon" type="image/ico" href="./favicon.ico"/>
+          <title>${title}</title>
+          <meta name="description" content="${description}">
+          <meta name"keywords" content="${keyWords.join(', ')}">
+          <meta name="author" content="${author}">
+          <link rel="icon" type="image/ico" href="./img/favicon.ico"/>
           <link rel="stylesheet" href="./app.css">
           <script>
               // Picture element HTML5 shiv
@@ -33,7 +48,7 @@ export default function (templateParams) {
               </main>
               ${pageFooter}
           </body>
-    </html>`
+    </html>`;
 
-  return html;
-};
+	return html;
+}
