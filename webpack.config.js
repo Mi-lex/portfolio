@@ -1,13 +1,13 @@
-const webpack = require('webpack');
-const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
+const webpack = require('webpack')
+const path = require('path')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin')
 
-const BUILD_FOLDER = 'docs';
+const BUILD_FOLDER = 'docs'
 
 const config = {
 	entry: {
@@ -69,17 +69,6 @@ const config = {
 				},
 			},
 			{
-				test: /\.(png|jpe?g|gif|ico)$/,
-				loaders: [
-					{
-						loader: 'file-loader',
-						options: {
-							name: './img/[name].[ext]',
-						},
-					},
-				],
-			},
-			{
 				test: /\.svg$/,
 				use: [
 					{
@@ -123,20 +112,12 @@ const config = {
 	optimization: {
 		minimizer: [],
 	},
-};
+}
 
 module.exports = (env, argv) => {
 	if (argv.mode === 'production') {
-		/**
-		 * Change rule for images
-		 * this is not the best approach
-		 * just don't want make another
-		 * config due to only one rule
-		 */
-		// the index of imgs rule is one that before last
-		const indexOfImgRules = config.module.rules.length - 2;
-
-		config.module.rules[indexOfImgRules] = {
+		// Change rule for images
+		const imgsRule = {
 			test: /\.(png|jpe?g|gif|ico)$/,
 			loaders: [
 				{
@@ -162,7 +143,9 @@ module.exports = (env, argv) => {
 					},
 				},
 			],
-		};
+		}
+
+		config.module.rules.push(imgsRule)
 
 		// Plagins
 		config.plugins.unshift(
@@ -171,15 +154,29 @@ module.exports = (env, argv) => {
 				verbose: true,
 				dry: false,
 			}),
-		);
+		)
 		config.plugins.push(
 			new webpack.LoaderOptionsPlugin({
 				minimize: true,
 			}),
-		);
+		)
 		// Minimizing
-		config.optimization.minimizer = [new UglifyJsPlugin()];
+		config.optimization.minimizer = [new UglifyJsPlugin()]
+	} else {
+		const imgsRule = {
+			test: /\.(png|jpe?g|gif|ico)$/,
+			loaders: [
+				{
+					loader: 'file-loader',
+					options: {
+						name: './img/[name].[ext]',
+					},
+				},
+			],
+		}
+
+		config.module.rules.push(imgsRule)
 	}
 
-	return config;
-};
+	return config
+}
