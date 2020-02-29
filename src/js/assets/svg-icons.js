@@ -13,6 +13,7 @@ import './../../img/icons/mysql.svg';
 import './../../img/icons/laravel.svg';
 import './../../img/icons/gulp.svg';
 import './../../img/icons/react.svg';
+import './../../img/icons/redux.svg';
 import './../../img/icons/typescript.svg';
 
 // Tools
